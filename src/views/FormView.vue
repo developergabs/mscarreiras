@@ -31,30 +31,20 @@
       </div>
 
       <div v-if="currentStep.id === 1" class="form-group">
-        <div class="form-group-half">
-          <label for="pis">PIS:</label>
-          <input type="text" v-model="identity.pis" />
-        </div>
+        <label for="pis">Número do PIS:</label>
+        <input type="text" v-model="identity.pis" />
       </div>
 
       <div v-if="currentStep.id === 1" class="form-group">
         <div class="form-group-half">
           <label for="rgNumber">Número do RG:</label>
-          <input type="text" v-model="identity.rgNumber" />
+          <input type="text" v-model="identity.rgNumber" class="input-numbers" />
         </div>
-      </div>
 
-      <div v-if="currentStep.id === 1" class="form-group">
+
         <div class="form-group-half">
           <label for="emissionRg">Data de Emissão:</label>
-          <input type="date" v-model="identity.emissionRg" max="9999-12-31" />
-        </div>
-      </div>
-
-      <div v-if="currentStep.id === 1" class="form-group">
-        <div class="form-group-half">
-          <label for="cep">CEP:</label>
-          <input type="text" v-model="identity.cep" />
+          <input type="date" v-model="identity.emissionRg" max="9999-12-31" class="input-numbers" />
         </div>
       </div>
 
@@ -77,12 +67,96 @@
       </div>
 
       <div v-if="currentStep.id === 1" class="form-group">
-        <label for="neighbor">Bairro:</label>
-        <input type="text" v-model="identity.neighbor" />
+        <div class="form-group-half">
+          <label for="cep">CEP:</label>
+          <input type="text" v-model="identity.cep" />
+        </div>
+        <div class="form-group-half">
+          <label for="neighbor">Bairro:</label>
+          <input type="text" v-model="identity.neighbor" />
+        </div>
+      </div>
+
+      <!-- Diversidade e Inclusão -->
+      <div v-if="currentStep.id === 2" class="form-group">
+        <div class="form-group-half">
+          <label for="gender">Gênero:</label>
+          <select v-model="diversidade.gender">
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Indiferente">Indiferente</option>
+          </select>
+        </div>
+
+        <div class="form-group-half">
+          <label for="identityGender">Identidade de Gênero:</label>
+          <select v-model="diversidade.identityGender">
+            <option value="Cisgênero">Cisgênero</option>
+            <option value="Transgênero">Transgênero</option>
+            <option value="Prefiro não responder">Prefiro não responder</option>
+          </select>
+        </div>
+      </div>
+
+      <div v-if="currentStep.id === 2" class="form-group">
+        <label for="race">Cor ou Raça:</label>
+        <select v-model="diversidade.race">
+          <option value="Amarela">Amarela</option>
+          <option value="Branca">Branca</option>
+          <option value="Indígena">Indígena</option>
+          <option value="Parda">Parda</option>
+          <option value="Preta">Preta</option>
+          <option value="Prefiro não responder">Prefiro não responder</option>
+        </select>
+      </div>
+
+      <div v-if="currentStep.id === 2" class="form-group">
+        <div class="form-group-half">
+          <label for="sexualOrientation">Orientação Sexual:</label>
+          <select v-model="diversidade.sexualOrientation">
+            <option value="Assexual">Assexual</option>
+            <option value="Bissexual">Bissexual</option>
+            <option value="Heterossexual">Heterossexual</option>
+            <option value="Homossexual">Homossexual</option>
+            <option value="Pansexual">Pansexual</option>
+            <option value="Prefiro não responder">Prefiro não responder</option>
+          </select>
+        </div>
+
+        <div class="form-group-half">
+          <label for="pronoun">Pronome:</label>
+          <select v-model="diversidade.pronoun">
+            <option value="Ele dele">Ele dele</option>
+            <option value="Ela dela">Ela dela</option>
+            <option value="Prefiro não responder">Prefiro não responder</option>
+          </select>
+        </div>
+      </div>
+
+      <div v-if="currentStep.id === 2" class="form-group">
+        <label for="disability">Pessoa com Deficiência:</label>
+        <select v-model="diversidade.hasDisability" @change="showDisabilityType">
+          <option value="sim">Sim</option>
+          <option value="não">Não</option>
+        </select>
+      </div>
+
+      <div v-if="currentStep.id === 2" class="form-group">
+        <div v-if="showDisabilitySelect">
+          <label for="disabilityType">Tipo de Deficiência:</label>
+          <select v-model="diversidade.disabilityType">
+            <option value="Auditiva">Auditiva</option>
+            <option value="Física">Física</option>
+            <option value="Intelectual">Intelectual</option>
+            <option value="Múltiplas">Múltiplas</option>
+            <option value="Outros">Outros</option>
+            <option value="Visual">Visual</option>
+          </select>
+        </div>
       </div>
 
       <!-- Formação -->
-      <div v-if="currentStep.id === 2" class="form-group">
+      <div v-if="currentStep.id === 3" class="form-group">
         <label for="education">Escolaridade:</label>
         <select v-model="education.level">
           <option value="">Selecione um nível de escolaridade</option>
@@ -94,7 +168,7 @@
         </select>
       </div>
 
-      <div v-if="education.level === 'Ensino Técnico' && currentStep.id === 2" class="form-group">
+      <div v-if="education.level === 'Ensino Técnico' && currentStep.id === 3" class="form-group">
         <label for="technicalCourse">Curso Técnico:</label>
         <select v-model="education.course">
           <option value="">Selecione um curso técnico</option>
@@ -102,7 +176,7 @@
         </select>
       </div>
 
-      <div v-if="education.level === 'Ensino Superior' && currentStep.id === 2" class="form-group">
+      <div v-if="education.level === 'Ensino Superior' && currentStep.id === 3" class="form-group">
         <label for="graduationCourse">Curso de Graduação:</label>
         <select v-model="education.course">
           <option value="">Selecione um curso de graduação</option>
@@ -110,12 +184,12 @@
         </select>
       </div>
 
-      <div v-if="education.level === 'Pós Graduação' && currentStep.id === 2" class="form-group">
+      <div v-if="education.level === 'Pós Graduação' && currentStep.id === 3" class="form-group">
         <label for="postGraduationCourse">Nome da Pós Graduação:</label>
         <input type="text" v-model="education.course" />
       </div>
 
-      <div v-if="currentStep.id === 2" class="form-group">
+      <div v-if="currentStep.id === 3" class="form-group">
         <label for="status">Status do Curso:</label>
         <select v-model="education.status">
           <option value="">Selecione o status do curso</option>
@@ -124,25 +198,27 @@
         </select>
       </div>
 
-      <div v-if="currentStep.id === 2" class="form-group">
+      <div v-if="currentStep.id === 3" class="form-group">
         <label for="institution">Instituição:</label>
         <input type="text" v-model="education.institution" />
       </div>
 
-      <div v-if="currentStep.id === 2" class="form-group">
+      <div v-if="currentStep.id === 3" class="form-group">
         <label for="startDate">Data de Início:</label>
         <input type="date" v-model="education.startDate" max="9999-12-31" />
       </div>
 
-      <div v-if="currentStep.id === 2" class="form-group">
+      <div v-if="currentStep.id === 3" class="form-group">
         <label for="endDate">Data de Término:</label>
         <input type="date" v-model="education.endDate" max="9999-12-31" />
       </div>
 
-      <button v-if="education.level === 'Graduação' && currentStep.id === 2" @click="addAnotherGraduation">Adicionar Graduação</button>
+      <button v-if="education.level === 'Graduação' && currentStep.id === 3" @click="addAnotherGraduation">Adicionar
+        Graduação</button>
+
 
       <!-- Experiência -->
-      <div v-if="!showAddExperienceButton && currentStep.id === 3" class="form-group">
+      <div v-if="!showAddExperienceButton && currentStep.id === 4" class="form-group">
         <div class="form-group">
           <label for="hasNoExperience">Não possuo experiência</label>
           <input type="checkbox" id="hasNoExperience" v-model="hasNoExperience" @change="toggleExperienceForm" />
@@ -192,14 +268,15 @@
             <div class="form-group">
               <button type="button" class="submit-button remove-button"
                 @click="removeExperience(index)">Remover</button>
-                  <button v-if="showAddExperienceButton" @click="addExperience">Adicionar experiência</button>
             </div>
+            <button v-if="showAddExperienceButton" @click="addExperience" class="submit-button">Adicionar
+              experiência</button>
           </div>
         </div>
       </div>
 
       <!-- Cursos Complementares -->
-      <div v-if="currentStep.id === 4" class="form-group">
+      <div v-if="currentStep.id === 5" class="form-group">
         <div v-for="(course, index) in courses" :key="index">
           <div class="form-group">
             <label for="course">Curso Complementar:</label>
@@ -209,6 +286,11 @@
           <div class="form-group">
             <label for="courseInstitution">Instituição:</label>
             <input type="text" v-model="course.institution" />
+          </div>
+
+          <div v-if="currentStep.id === 5" class="form-group">
+            <label for="extraHours">Banco de Horas:</label>
+            <input type="number" v-model="extraHours" placeholder="Informe o banco de horas acumulado" />
           </div>
 
           <div class="form-group-half">
@@ -221,18 +303,30 @@
             <input type="date" v-model="course.endDate" max="9999-12-31" />
           </div>
 
-          <button type="button" class="submit-button remove-button" @click="removeCourse(index)">Remover</button>
+          <div class="buttons">
+            <button type="button" class="submit-button remove-button" @click="removeCourse(index)">Remover</button>
+            <button type="button" class="submit-button" @click="addCourse">Adicionar Curso</button>
+          </div>
         </div>
-        <button type="button" class="submit-button" @click="addCourse">Adicionar Curso Complementar</button>
       </div>
 
+
       <!-- Idiomas -->
-      <div v-if="currentStep.id === 5" class="form-group">
+      <div v-if="currentStep.id === 6" class="form-group">
         <div v-for="(language, index) in languages" :key="index">
           <div class="form-group">
             <label for="language">Idioma:</label>
             <input type="text" v-model="language.language" />
           </div>
+
+          <label for="proficiency">Nível de Proficiência:</label>
+          <select v-model="proficiency">
+            <option value="">Selecione o nível de proficiência</option>
+            <option value="Básico">Básico</option>
+            <option value="Intermediário">Intermediário</option>
+            <option value="Avançado">Avançado</option>
+            <option value="Fluente">Fluente</option>
+          </select>
 
           <div class="form-group">
             <label for="languageInstitution">Instituição:</label>
@@ -254,7 +348,13 @@
           </div>
         </div>
       </div>
-      <button type="submit" class="submit-button">{{ currentStep.buttonText }}</button>
+
+      <div class="buttons">
+        <div class="navigation-buttons">
+          <button v-if="currentStep.id > 1" @click="goToPreviousStep" class="submit-button">Voltar</button>
+          <button type="submit" class="submit-button">{{ currentStep.buttonText }}</button>
+        </div>
+      </div>
     </form>
 
     <div v-if="showSuccessMessage">
@@ -265,13 +365,12 @@
 
 <script>
 import SuccessView from './SuccessView.vue';
-// import { useRouter } from 'vue-router';
 
 export default {
   name: 'RegisterView',
   data() {
     return {
-      currentStep: { id: 1, title: "Identidade", buttonText: "Próximo" },
+      currentStep: { id: 1, title: "Dados Pessoais (1/6)", buttonText: "Próximo" },
       identity: {
         fullName: "",
         email: "",
@@ -345,6 +444,16 @@ export default {
         "Tocantins": ["Palmas", "Araguaína", "Gurupi"]
       },
       cities: [],
+      diversidade: {
+        gender: "",
+        identityGender: "",
+        race: "",
+        sexualOrientation: "",
+        pronoun: "",
+        hasDisability: 'não',
+        disabilityType: ""
+      },
+      showDisabilitySelect: false,
       technicalCourses: [
         "Informática",
         "Eletrônica",
@@ -479,6 +588,7 @@ export default {
       courses: [
         { course: "", institution: "", startDate: "", endDate: "" }
       ],
+      extraHours: "",
       languages: [
         { language: "", institution: "", startDate: "", endDate: "" }
       ],
@@ -509,34 +619,51 @@ export default {
       this.cities = this.citiesByState[selectedState] || [];
     },
     submitForm() {
-      if (this.currentStep.id < 5) {
+      if (this.currentStep.id < 6) {
         this.currentStep.id++;
         this.updateStep();
       } else {
         this.showSuccessMessage = true;
       }
     },
+    goToPreviousStep() {
+      if (this.currentStep.id > 1) {
+        this.currentStep.id--;
+        this.updateStep();
+      }
+    },
     updateStep() {
       switch (this.currentStep.id) {
         case 1:
-          this.currentStep.title = "Identidade";
+          this.currentStep.title = "Dados Pessoais (1/6)";
           this.currentStep.buttonText = "Próximo";
           break;
         case 2:
-          this.currentStep.title = "Formação";
+          this.currentStep.title = "Diversidade e Inclusão (2/6)";
           break;
         case 3:
-          this.currentStep.title = "Experiência";
+          this.currentStep.title = "Formação (3/6)";
           break;
         case 4:
-          this.currentStep.title = "Cursos Complementares";
+          this.currentStep.title = "Experiência (4/6)";
           break;
         case 5:
-          this.currentStep.title = "Idiomas";
+          this.currentStep.title = "Cursos Complementares (5/6)";
+          break;
+        case 6:
+          this.currentStep.title = "Idiomas (6/6)";
           this.currentStep.buttonText = "Enviar";
           break;
         default:
           break;
+      }
+    },
+    showDisabilityType() {
+      if (this.diversidade.hasDisability === 'sim') {
+        this.showDisabilitySelect = true;
+      } else {
+        this.showDisabilitySelect = false;
+        this.diversidade.disabilityType = '';
       }
     },
     toggleExperienceForm() {
