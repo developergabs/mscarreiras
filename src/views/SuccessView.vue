@@ -4,7 +4,7 @@
     <p>Seu currículo foi cadastrado com sucesso em nosso banco de dados.</p>
     <div class="buttons">
       <router-link to="/">
-        <button class="success-button">Voltar ao Menu</button>
+        <button class="success-button" @click="homeSite()">Voltar ao Menu</button>
       </router-link>
       <button class="success-button" @click="resetForm">Cadastrar Novo Currículo</button>
     </div>
@@ -15,8 +15,11 @@
 export default {
   name: 'SuccessPage',
   methods: {
+    homeSite() {
+      this.$router.push('/home')
+    },
     resetForm() {
-      window.location.reload();
+      this.$router.push('/cadastro')
     }
   }
 };
