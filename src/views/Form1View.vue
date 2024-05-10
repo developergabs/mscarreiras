@@ -19,7 +19,7 @@
               </div>
               <div class="input-field">
                 <label for="cpf">CPF:</label>
-                <input type="text" v-model="identity.cpf" />
+                <input type="text" v-model="identity.cpf" placeholder="___.___.___-__" v-mask="'###.###.###-##'" />
               </div>
 
               <div class="input-field">
@@ -32,12 +32,13 @@
               </div>
               <div class="input-field">
                 <label for="pis">Número do PIS:</label>
-                <input type="text" v-model="identity.pis" />
+                <input type="text" v-model="identity.pis" v-mask="'###.#####.##-#'" />
               </div>
 
               <div v-if="currentStep.id === 1" class="input-field">
                 <label for="rgNumber">Número do RG:</label>
-                <input type="text" v-model="identity.rgNumber" class="input-numbers" />
+                <input type="text" v-model="identity.rgNumber" class="input-numbers"
+                  @input="limitInputLength($event, 7)" />
               </div>
               <div v-if="currentStep.id === 1" class="input-field">
                 <label for="emissionRg">Data de Emissão:</label>
@@ -60,7 +61,7 @@
               </div>
               <div class="input-field">
                 <label for="cep">CEP:</label>
-                <input type="text" v-model="identity.cep" />
+                <input type="text" v-model="identity.cep" placeholder="_____-___" @input="limitInputLength($event, 8)" />
               </div>
               <div v-if="currentStep.id === 1" class="input-field">
                 <label for="neighbor">Bairro:</label>
@@ -153,17 +154,16 @@
       </form>
     </div>
   </div>
-
-  <div v-if="showSuccessMessage">
-    <SuccessView />
-  </div>
 </template>
 
 <script>
-import SuccessView from './SuccessView.vue';
+import { VueMaskDirective } from 'vue-the-mask'
 
 export default {
   name: 'Form1View',
+  directives: {
+    mask: VueMaskDirective
+  },
   data() {
     return {
       currentStep: { id: 1, title: "Dados Pessoais (1/6)", buttonText: "Próximo" },
@@ -211,33 +211,30 @@ export default {
         "Tocantins"
       ],
       citiesByState: {
-        "Acre": ["Rio Branco", "Cruzeiro do Sul", "Sena Madureira"],
-        "Alagoas": ["Maceió", "Arapiraca", "Palmeira dos Índios"],
-        "Amapá": ["Macapá", "Santana", "Laranjal do Jari"],
-        "Amazonas": ["Manaus", "Parintins", "Itacoatiara"],
-        "Bahia": ["Salvador", "Feira de Santana", "Vitória da Conquista"],
-        "Ceará": ["Fortaleza", "Caucaia", "Juazeiro do Norte"],
-        "Distrito Federal": ["Brasília"],
-        "Espírito Santo": ["Vitória", "Vila Velha", "Serra"],
-        "Goiás": ["Goiânia", "Anápolis", "Aparecida de Goiânia"],
-        "Maranhão": ["São Luís", "Imperatriz", "São José de Ribamar"],
-        "Mato Grosso": ["Cuiabá", "Várzea Grande", "Rondonópolis"],
-        "Mato Grosso do Sul": ["Campo Grande", "Dourados", "Três Lagoas"],
-        "Minas Gerais": ["Belo Horizonte", "Uberlândia", "Contagem"],
-        "Pará": ["Belém", "Ananindeua", "Santarém"],
-        "Paraíba": ["João Pessoa", "Campina Grande", "Santa Rita"],
-        "Paraná": ["Curitiba", "Londrina", "Maringá"],
-        "Pernambuco": ["Recife", "Jaboatão dos Guararapes", "Olinda"],
-        "Piauí": ["Teresina", "Parnaíba", "Picos"],
-        "Rio de Janeiro": ["Rio de Janeiro", "São Gonçalo", "Duque de Caxias"],
-        "Rio Grande do Norte": ["Natal", "Mossoró", "Parnamirim"],
-        "Rio Grande do Sul": ["Porto Alegre", "Caxias do Sul", "Pelotas"],
-        "Rondônia": ["Porto Velho", "Ji-Paraná", "Ariquemes"],
-        "Roraima": ["Boa Vista", "Caracaraí", "Rorainópolis"],
-        "Santa Catarina": ["Florianópolis", "Joinville", "Blumenau"],
-        "São Paulo": ["São Paulo", "Guarulhos", "Campinas"],
-        "Sergipe": ["Aracaju", "Nossa Senhora do Socorro", "Lagarto"],
-        "Tocantins": ["Palmas", "Araguaína", "Gurupi"]
+        "Amazonas": ["Manaus", "Parintins", "Itacoatiara", "Manacapuru", "Coari", "Tefé", "Tabatinga", "São Gabriel da Cachoeira", "Humaitá", "Iranduba"],
+        "Bahia": ["Salvador", "Feira de Santana", "Vitória da Conquista", "Camaçari", "Itabuna", "Juazeiro", "Lauro de Freitas", "Ilhéus", "Jequié", "Teixeira de Freitas"],
+        "Ceará": ["Fortaleza", "Caucaia", "Juazeiro do Norte", "Maracanaú", "Sobral", "Crato", "Itapipoca", "Maranguape", "Iguatu", "Quixadá"],
+        "Distrito Federal": ["Brasília", "Ceilândia", "Gama", "Taguatinga", "Paranoá", "Planaltina", "Samambaia", "Santa Maria", "Sobradinho", "Recanto das Emas"],
+        "Espírito Santo": ["Vitória", "Vila Velha", "Serra", "Cariacica", "Cachoeiro de Itapemirim", "Linhares", "São Mateus", "Guarapari", "Colatina", "Aracruz"],
+        "Goiás": ["Goiânia", "Anápolis", "Aparecida de Goiânia", "Rio Verde", "Águas Lindas de Goiás", "Luziânia", "Valparaíso de Goiás", "Trindade", "Formosa", "Novo Gama"],
+        "Maranhão": ["São Luís", "Imperatriz", "São José de Ribamar", "Timon", "Caxias", "Codó", "Paço do Lumiar", "Açailândia", "Bacabal", "Balsas"],
+        "Mato Grosso": ["Cuiabá", "Várzea Grande", "Rondonópolis", "Sinop", "Tangará da Serra", "Cáceres", "Sorriso", "Lucas do Rio Verde", "Primavera do Leste", "Barra do Garças"],
+        "Mato Grosso do Sul": ["Campo Grande", "Dourados", "Três Lagoas", "Corumbá", "Ponta Porã", "Naviraí", "Nova Andradina", "Aquidauana", "Sidrolândia", "Paranaíba"],
+        "Minas Gerais": ["Belo Horizonte", "Uberlândia", "Contagem", "Betim", "Montes Claros", "Ribeirão das Neves", "Uberaba", "Governador Valadares", "Ipatinga", "Sete Lagoas"],
+        "Pará": ["Belém", "Ananindeua", "Santarém", "Marabá", "Castanhal", "Parauapebas", "Itaituba", "Abaetetuba", "Cametá", "São Félix do Xingu"],
+        "Paraíba": ["João Pessoa", "Campina Grande", "Santa Rita", "Patos", "Bayeux", "Sousa", "Cajazeiras", "Cabedelo", "Guarabira", "Santa Luzia"],
+        "Paraná": ["Curitiba", "Londrina", "Maringá", "Ponta Grossa", "Cascavel", "São José dos Pinhais", "Foz do Iguaçu", "Colombo", "Guarapuava", "Paranaguá"],
+        "Pernambuco": ["Recife", "Jaboatão dos Guararapes", "Olinda", "Caruaru", "Petrolina", "Paulista", "Cabo de Santo Agostinho", "Camaragibe", "Garanhuns", "Vitória de Santo Antão"],
+        "Piauí": ["Teresina", "Parnaíba", "Picos", "Campo Maior", "Floriano", "Piripiri", "Barras", "Altos", "José de Freitas", "Oeiras"],
+        "Rio de Janeiro": ["Rio de Janeiro", "São Gonçalo", "Duque de Caxias", "Nova Iguaçu", "Niterói", "Campos dos Goytacazes", "Belford Roxo", "São João de Meriti", "Petrópolis", "Volta Redonda"],
+        "Rio Grande do Norte": ["Natal", "Mossoró", "Parnamirim", "São Gonçalo do Amarante", "Macaíba", "Ceará-Mirim", "Caicó", "Açu", "Currais Novos", "São José de Mipibu"],
+        "Rio Grande do Sul": ["Porto Alegre", "Caxias do Sul", "Pelotas", "Canoas", "Santa Maria", "Gravataí", "Viamão", "Novo Hamburgo", "São Leopoldo", "Rio Grande"],
+        "Rondônia": ["Porto Velho", "Ji-Paraná", "Ariquemes", "Vilhena", "Cacoal", "Rolim de Moura", "Guajará-Mirim", "Jaru", "Ouro Preto do Oeste", "Pimenta Bueno"],
+        "Roraima": ["Boa Vista", "Caracaraí", "Rorainópolis", "Bonfim", "Mucajaí", "São Luiz", "Cantá", "Alto Alegre", "Pacaraima", "Caroebe"],
+        "Santa Catarina": ["Florianópolis", "Joinville", "Blumenau", "São José", "Criciúma", "Chapecó", "Itajaí", "Jaraguá do Sul", "Palhoça", "Lages"],
+        "São Paulo": ["São Paulo", "Guarulhos", "Campinas", "São Bernardo do Campo", "Santo André", "São José dos Campos", "Osasco", "Ribeirão Preto", "Sorocaba", "Mauá"],
+        "Sergipe": ["Aracaju", "Nossa Senhora do Socorro", "Lagarto", "Itabaiana", "São Cristóvão", "Estância", "Tobias Barreto", "Simão Dias", "Nossa Senhora da Glória", "Itabaianinha"],
+        "Tocantins": ["Palmas", "Araguaína", "Gurupi", "Porto Nacional", "Paraíso do Tocantins", "Gurupi", "Colinas do Tocantins", "Guaraí", "Formoso do Araguaia", "Dianópolis"]
       },
       cities: [],
       diversidade: {
@@ -251,9 +248,6 @@ export default {
       },
       showDisabilitySelect: false,
     };
-  },
-  components: {
-    SuccessView
   },
   mounted() {
     this.loadData();
@@ -270,14 +264,18 @@ export default {
         console.error('Erro ao carregar os dados:', error);
       }
     },
-
+    limitInputLength(event, maxLength) {
+      if (event.target.value.length > maxLength) {
+        event.target.value = event.target.value.slice(0, maxLength);
+      }
+    },
     updateCities() {
       const selectedState = this.identity.state;
       this.cities = this.citiesByState[selectedState] || [];
     },
     goToNextStep() {
       this.$router.push('/cadastro2')
-    }, 
+    },
     showDisabilityType() {
       if (this.diversidade.hasDisability === 'sim') {
         this.showDisabilitySelect = true;

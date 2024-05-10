@@ -73,11 +73,8 @@
                 <h2>Termos e Condições de Uso - MS Consulting</h2>
                 <div class="modal-content">
                     <div class="modal-scrollable-content">
-                        Claro! Aqui está o texto com as tags HTML adicionadas:
-
-                        ```html
                         <p><strong>Termos de uso da plataforma MS Consulting</strong></p>
-
+                        <br>
                         <p><strong>Objetivo geral</strong><br>
                             Este documento descreve os termos e condições aos quais se submetem os USUÁRIOS que se
                             inscrevem na plataforma da MS Consulting por meio do site, estabelecendo as normas básicas
@@ -89,21 +86,21 @@
                             novas legislações, jurisprudências e práticas de mercado, sem que seja necessária
                             notificação prévia. Por isso, é importante que o USUÁRIO consulte tais documentos para saber
                             se continua concordando com os termos antes de seguir com a navegação e cadastro.</p>
-
+                        <br>
                         <p><strong>Serviços oferecidos</strong><br>
                             Fica esclarecido ao USUÁRIO, o qual se declara ciente, que o serviço oferecido pela MS
-                            Consulting se relaciona apenas à intermediação de vagas entre as empresas clientes e
-                            candidatos/USUÁRIOS, não existindo qualquer responsabilidade pelo ato de contratação. O
+                            Consulting se relaciona apenas ao cadastro de currículo para divulgação de vagas, não
+                            existindo qualquer responsabilidade pelo ato de contratação. O
                             USUÁRIO declara ciência que a finalidade da coleta e tratamento de dados pessoais pela MS
                             Consulting é para prestação destes serviços de recrutamento e seleção de candidatos,
                             especificamente para funções de vendas e marketing.</p>
-
+                        <br>
                         <p><strong>Direitos e obrigações do usuário (Candidato)</strong><br>
                             O USUÁRIO declara ter lido, entendido e que aceita todas as regras, condições e obrigações
                             estabelecidas no presente TERMO, bem como na Política de Privacidade.</p>
-
+                        <br>
                         <p>Ao se cadastrar, o USUÁRIO reconhece que:</p>
-
+                        <br>
                         <ul>
                             <li><strong>Para efetuar o cadastro em nossa plataforma</strong>, deverá ter capacidade
                                 jurídica para atos civis e deverá, necessariamente, prestar as informações exigidas no
@@ -116,12 +113,12 @@
                             <li>A recuperação de senhas perdidas ou esquecidas dar-se-á conforme as normas de segurança
                                 divulgadas no site.</li>
                         </ul>
-
+                        <br>
                         <p>O USUÁRIO poderá fazer o cadastro de forma gratuita, devendo informar os seguintes dados
                             pessoais (cujo propósito é o descrito acima, sendo que a finalidade da obtenção dos dados e
                             a base legal para o tratamento dos dados encontra-se descrita na Política de Privacidade):
                         </p>
-
+                        <br>
                         <ul>
                             <li><strong>Dados pessoais e dados de identificação</strong>: Nome, sexo, gênero, estado
                                 civil, data de nascimento, endereço, número de telefone, endereço de e-mail, Link do
@@ -145,9 +142,9 @@
                                 feito por telefone, videoconferências, entrevistas presenciais e gravações em vídeo.
                             </li>
                         </ul>
-
+                        <br>
                         <p>O USUÁRIO aceita e autoriza expressamente que:</p>
-
+                        <br>
                         <ul>
                             <li>Todos seus dados cadastrados no perfil sejam compartilhados com empresas clientes da MS
                                 Consulting, objetivando sua participação e avaliação em vagas sendo conduzidas por esta
@@ -155,9 +152,9 @@
                             <li>Sua imagem e voz sejam gravadas pela MS Consulting e visualizadas posteriormente pelos
                                 consultores e/ou, eventualmente, pelas empresas clientes da MS Consulting.</li>
                         </ul>
-
+                        <br>
                         <p>O USUÁRIO declara ciência de que:</p>
-
+                        <br>
                         <ul>
                             <li>Poderá, a qualquer tempo, efetuar a desativação do seu perfil, oportunidade em que os
                                 dados não serão visíveis aos consultores da MS Consulting para eventual recrutamento e
@@ -167,28 +164,26 @@
                             <li>A partir do seu cadastro e aceitação do Termo de Uso, poderão ser enviadas mensagens via
                                 e-mail, whatsapp, dentre outros canais de comunicação, informando sobre vagas e
                                 processos seletivos abertos que estejam de acordo com o perfil cadastrado no site, tendo
-                                ocorrido a candidatura
-
-                                ou não.</li>
+                                ocorrido a candidatura ou não.</li>
                         </ul>
-
+                        <br>
                         <p>Não existe um prazo para o tratamento dos dados e a MS Consulting não exclui os dados
                             armazenados, independente do período de tempo, salvo por solicitação do USUÁRIO.</p>
-
+                        <br>
                         <p>A qualquer tempo, saiba que poderá excluir seu perfil e dados pessoais dos cadastros da MS
                             Consulting, de forma que todos seus dados serão excluídos da base de dados da empresa,
                             devendo para tanto enviar um e-mail para rh@msconsultingbrasil.com.br com o título “Exclusão
                             de dados pessoais”. Com esta solicitação, a MS Consulting fará a exclusão dos dados em até
                             72 (setenta e duas) horas.</p>
-
+                        <br>
                         <p>Ao solicitar a exclusão dos Dados Pessoais, o USUÁRIO não poderá criar uma nova conta
                             utilizando o mesmo endereço de e-mail.</p>
-
+                        <br>
                         <p>Caso o USUÁRIO solicite a exclusão de seus Dados Pessoais, situação em que imediatamente
                             perderá acesso aos serviços da MS Consulting, pode ocorrer que os dados precisem ser
                             mantidos por período superior ao pedido de exclusão, nos termos do art. 16 da Lei Geral de
                             Proteção de Dados Pessoais, especialmente para:</p>
-
+                        <br>
                         <ul>
                             <li>Cumprimento de obrigação legal ou regulatória;</li>
                             <li>Estudo por órgão de pesquisa, garantida, sempre que possível, a anonimização dos dados
@@ -198,10 +193,10 @@
                                 os dados pessoais serão excluídos com uso de métodos de descarte seguro, ou utilizados
                                 de forma anonimizada para fins estatísticos.</li>
                         </ul>
-
+                        <br>
                         <p>A MS Consulting também se reserva no direito de pesquisar e coletar informações sobre sua
                             pessoa através de banco de dados externos e terceiros, notadamente, pelo LINKEDIN.</p>
-
+                        <br>
                         <p><strong>Direitos e obrigações da MS Consulting</strong><br>
                             A MS Consulting possui obrigação de manter a fidelidade dos dados cadastrados no sistema
                             pelo USUÁRIO e zelar pela privacidade dos mesmos. Os dados pessoais não serão, em hipótese
@@ -209,10 +204,10 @@
                             empregadoras, que são clientes da MS Consulting. Obriga-se a MS Consulting a proteger, por
                             meio de armazenamento em servidores ou quaisquer outros meios magnéticos de alta segurança,
                             a confidencialidade de todas as informações e cadastros relativos aos USUÁRIOS.</p>
-
+                        <br>
                         <p>Poderá a MS Consulting compartilhar os dados e o perfil do candidato com terceiros, desde
                             que:</p>
-
+                        <br>
                         <ul>
                             <li>Sejam empresas clientes, quando necessário para o processo de recrutamento e seleção
                                 oferecido pela MS Consulting.</li>
@@ -220,56 +215,49 @@
                                 cumprir qualquer lei aplicável ou ordem judicial ou em relação a qualquer procedimento
                                 legal.</li>
                         </ul>
-
+                        <br>
                         <p>Caso a MS Consulting tome ciência por si mesma, ou por qualquer terceiro, de que qualquer
                             informação veiculada pelo USUÁRIO através do site está em desacordo com o sistema jurídico
                             vigente, inclusive por conflito com direitos de terceiros, será enviada comunicação para
                             manifestação do USUÁRIO sobre tais fatos no prazo máximo de 24 (vinte e quatro) horas.</p>
-
+                        <br>
                         <p>Se após a devida manifestação ficar constatada a ilicitude ou irregularidade do conteúdo
                             publicado pelo USUÁRIO, a MS Consulting poderá excluir a informação, ou até mesmo desativar
                             seu cadastro e currículo do site unilateralmente, independentemente de autorização, podendo
                             fornecer todas as informações às autoridades legais, nos termos da lei.</p>
-
+                        <br>
                         <p>Ainda, no silêncio do USUÁRIO no prazo designado acima, a MS Consulting poderá suspender o
                             conteúdo publicado unilateralmente, independentemente de autorização, até a devida
                             regularização ou manifestação no sentido de demonstrar a adequação do conteúdo ao sistema
                             jurídico vigente.</p>
-
+                        <br>
                         <p>Caso a MS Consulting constate uma incontroversa ilicitude de conteúdo que possa causar danos
                             de qualquer espécie a terceiros ou envolva legislação de natureza penal, ela poderá
                             suspender o cadastro do USUÁRIO, unilateralmente, previamente a comunicação para
                             manifestação a respeito, nos termos do acima.</p>
-
+                        <br>
                         <p>A suspensão ou exclusão de conteúdo também será unilateral e independente de qualquer
                             comunicação ao USUÁRIO quando determinado por órgão do poder público competente.</p>
-
+                        <br>
                         <p>A suspensão de conteúdo ajustada acima não dará direito a nenhuma espécie de indenização, nem
                             a reparação de danos ou prejuízos pela MS Consulting ao USUÁRIO.</p>
-
+                        <br>
                         <p>Por fim, a MS Consulting se reserva o direito de, caso constatado descumprimento pelo USUÁRIO
                             de qualquer obrigação decorrente dos presentes Termos de Uso ou da Política de Privacidade,
                             desativar o acesso ao site, ou mesmo excluir cadastro e currículo, sem prejuízo da
                             possibilidade de remessa de seus dados cadastrais e de acesso às autoridades legais
                             competentes, sem que isso represente lesão aos direitos de privacidade.</p>
-
+                        <br>
                         <p><strong>Vigência e modificação</strong><br>
                             Este Termo de Uso vigorará por tempo indeterminado e, poderá, a qualquer tempo, ter seu
                             conteúdo, integral ou parcialmente, modificado para adequações e inserções, tudo com vistas
                             ao aprimoramento dos serviços disponibilizados, sendo que, em tal caso, o USUÁRIO será
                             devidamente notificado via e-mail.</p>
-
+                        <br>
                         <p><strong>Comunicação</strong><br>
                             Qualquer dúvida, sugestão, reclamação, etc. sobre estes termos de uso poderá ser esclarecida
                             por meio de contato com o Encarregado de Dados da MS Consulting, pelo e-mail: <a
                                 href="mailto:rh@msconsultingbrasil.com.br">rh@msconsultingbrasil.com.br</a>.</p>
-
-                        <p><strong>Foro de eleição</strong><br>
-                            As partes elegem como competente para dirimir eventuais controvérsias que venham a surgir da
-                            interpretação e do cumprimento do presente TERMO o foro da Comar
-
-                            ca de CURITIBA/PR.</p>
-                        ```
 
                         <p><input type="checkbox" id="termos" name="termos">
                             <label for="termos"> Aceito os termos e condições de uso MS Consulting</label>
@@ -847,16 +835,16 @@ form.sign-in-form {
 }
 
 .move-forward {
-    background-color: #4CAF50; 
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 14px; 
-  margin: 10px;
-  cursor: pointer;
-  border-radius: 8px;
-  float: right;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    float: right;
 }
 </style>

@@ -69,7 +69,6 @@
                             </div>
                         </div>
 
-                        
                         <div class="details personal">
                             <span class="title">Experiência</span>
 
@@ -88,6 +87,7 @@
                                     <label for="salary">Salário:</label>
                                     <input type="text" v-model="experience.salary" />
                                 </div>
+
 
                                 <div class="input-field">
                                     <label for="workMode">Modelo de trabalho:</label>
