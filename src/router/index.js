@@ -3,7 +3,9 @@ import HomeView from '../views/HomeView.vue'
 import Form1View from '@/views/Form1View.vue'
 import Form2View from '@/views/Form2View.vue'
 import Form3View from '@/views/Form3View.vue'
-import LoginView from '@/views/LoginView.vue'
+import LoginCand from '@/views/LoginCand.vue'
+import LoginEmp from '@/views/LoginEmp.vue'
+import AdminPanel from '@/views/AdminPanel.vue'
 import SuccessView from '@/views/SuccessView.vue'
 
 const routes = [
@@ -21,9 +23,14 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
-    path: '/login',
-    name: 'Login',
-    component: LoginView
+    path: '/login/candidate',
+    name: 'Login Candidato',
+    component: LoginCand
+  },
+  {
+    path: '/login/company',
+    name: 'Login Empresa',
+    component: LoginEmp
   },
   {
     path: '/cadastro',
@@ -39,6 +46,11 @@ const routes = [
     path: '/cadastro3',
     name: 'Formulario3',
     component: Form3View
+  },
+  {
+    path: '/admin',
+    name: 'Painel Admin',
+    component: AdminPanel
   },
   {
     path: '/success',

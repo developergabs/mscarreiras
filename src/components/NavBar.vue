@@ -1,36 +1,43 @@
 <template>
   <header>
-      <nav class="navigation">
-          <img src="../assets/mslogo.png" class="logoms">
-          <ul class="nav-menu">
-              <li class="nav-item"><router-link to="/">Inicio</router-link></li>
-              <li class="nav-item"><router-link to="/about">Sobre</router-link></li>
-              <li class="nav-item"><a href="https://msconsulting.vagas.solides.com.br">Vagas</a></li>
-              <li class="nav-item"><a href="#">Contato</a></li>
-              <li class="nav-item"><a href="#">Login / Cadastre-se</a></li>
-              <i class="bx bx-search"></i> 
-          </ul>
-          <div class="menu">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
-          </div>
-      </nav>
+    <nav class="navigation">
+      <img src="../assets/mslogo.png" class="logoms">
+      <ul class="nav-menu">
+        <li class="nav-item"><router-link to="/">Inicio</router-link></li>
+        <li class="nav-item"><router-link to="/about">Sobre</router-link></li>
+        <li class="nav-item"><a href="https://msconsulting.vagas.solides.com.br">Vagas</a></li>
+        <li class="nav-item"><a href="#">Contato</a></li>
+        <li class="nav-item">
+          <router-link to="/login/candidate">
+            Login Candidato</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/login/company">
+            Login Empresa</router-link>
+        </li>
+        <i class="bx bx-search"></i>
+      </ul>
+      <div class="menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
   </header>
 
 </template>
 
 <script>
 export default {
-mounted () {
-  const menu = document.querySelector('.menu')
-  const NavMenu = document.querySelector('.nav-menu')
+  mounted() {
+    const menu = document.querySelector('.menu')
+    const NavMenu = document.querySelector('.nav-menu')
 
-  menu.addEventListener('click', () => {
-    menu.classList.toggle('ativo')
-    NavMenu.classList.toggle('ativo')
-  })
-}
+    menu.addEventListener('click', () => {
+      menu.classList.toggle('ativo')
+      NavMenu.classList.toggle('ativo')
+    })
+  }
 }
 </script>
 
@@ -41,9 +48,9 @@ body {
 }
 
 .logoms {
-    width: 120px;
-    height: auto;
-    
+  width: 120px;
+  height: auto;
+
 }
 
 .navigation {
@@ -106,7 +113,6 @@ body {
 
 .menu .bar:nth-child(1),
 .menu .bar:nth-child(3) {
-background: #d63a25;
+  background: #d63a25;
 }
-
 </style>

@@ -11,7 +11,6 @@
         </router-link>
       </div>
       <div class="home-img">
-        <!-- <img src="../assets/rh.jpg"> -->
       </div>
     </section>
   </main>
