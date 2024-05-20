@@ -6,23 +6,22 @@
             <form action="#">
                 <div class="form first">
                     <div class="details personal">
-                        <span class="title">Formação</span>
+                        <div v-for="(education, index) in educations" :key="index">
+                            <span class="title">Formação</span>
+                            <div class="fields">
+                                <div class="input-field">
+                                    <label for="education">Escolaridade:</label>
+                                    <select v-model="education.level">
+                                        <option value="">Selecione um nível de escolaridade</option>
+                                        <option value="Ensino Fundamental">Ensino Fundamental</option>
+                                        <option value="Ensino Médio">Ensino Médio</option>
+                                        <option value="Ensino Técnico">Ensino Técnico</option>
+                                        <option value="Ensino Superior">Ensino Superior</option>
+                                        <option value="Pós Graduação">Pós Graduação</option>
+                                    </select>
+                                </div>
 
-                        <div class="fields">
-                            <div class="input-field">
-                                <label for="education">Escolaridade:</label>
-                                <select v-model="education.level">
-                                    <option value="">Selecione um nível de escolaridade</option>
-                                    <option value="Ensino Fundamental">Ensino Fundamental</option>
-                                    <option value="Ensino Médio">Ensino Médio</option>
-                                    <option value="Ensino Técnico">Ensino Técnico</option>
-                                    <option value="Ensino Superior">Ensino Superior</option>
-                                    <option value="Pós Graduação">Pós Graduação</option>
-                                </select>
-                            </div>
-
-                            <div class="input-field">
-                                <div v-if="education.level === 'Ensino Técnico'">
+                                <div class="input-field" v-if="education.level === 'Ensino Técnico'">
                                     <label for="technicalCourse">Curso Técnico:</label>
                                     <select v-model="education.course">
                                         <option value="">Selecione um curso técnico</option>
@@ -30,7 +29,7 @@
                                     </select>
                                 </div>
 
-                                <div v-if="education.level === 'Ensino Superior'">
+                                <div class="input-field" v-if="education.level === 'Ensino Superior'">
                                     <label for="graduationCourse">Curso de Graduação:</label>
                                     <select v-model="education.course">
                                         <option value="">Selecione uma graduação</option>
@@ -38,35 +37,42 @@
                                     </select>
                                 </div>
 
-                                <div v-if="education.level === 'Pós Graduação'">
+                                <div class="input-field" v-if="education.level === 'Pós Graduação'">
                                     <label for="postGraduationCourse">Nome da Pós Graduação:</label>
                                     <input type="text" v-model="education.course" />
                                 </div>
-                            </div>
 
-                            <div class="input-field">
-                                <label for="instituition">Instituição</label>
-                                <input type="text" placeholder="Nome da instituição">
-                            </div>
+                                <div class="input-field">
+                                    <label for="institution">Instituição:</label>
+                                    <input type="text" v-model="education.institution"
+                                        placeholder="Nome da instituição" />
+                                </div>
 
-                            <div class="input-field">
-                                <label for="status">Status do Curso:</label>
-                                <select v-model="education.status">
-                                    <option value="">Selecione o status do curso</option>
-                                    <option value="Em andamento">Em andamento</option>
-                                    <option value="Concluído">Concluído</option>
-                                </select>
-                            </div>
+                                <div class="input-field">
+                                    <label for="status">Status do Curso:</label>
+                                    <select v-model="education.status">
+                                        <option value="">Selecione o status do curso</option>
+                                        <option value="Em andamento">Em andamento</option>
+                                        <option value="Concluído">Concluído</option>
+                                    </select>
+                                </div>
 
-                            <div class="input-field">
-                                <label for="startDate">Data de Início:</label>
-                                <input type="date" v-model="education.startDate" max="9999-12-31">
-                            </div>
+                                <div class="input-field">
+                                    <label for="startDate">Data de Início:</label>
+                                    <input type="date" v-model="education.startDate" max="9999-12-31" />
+                                </div>
 
-                            <div class="input-field">
-                                <label for="endDate">Data de Término:</label>
-                                <input type="date" v-model="education.endDate" max="9999-12-31">
+                                <div class="input-field">
+                                    <label for="endDate">Data de Término:</label>
+                                    <input type="date" v-model="education.endDate" max="9999-12-31" />
+                                </div>
                             </div>
+                        </div>
+                        <div class="buttons">
+                            <button type="button" @click="removeEducation(index)" class="semi-button-remove"><i
+                                    class="uil uil-multiply"></i></button>
+                            <button type="button" @click="addNewEducation" class="semi-button-add"><i
+                                    class="uil uil-plus"></i></button>
                         </div>
 
                         <div class="details personal">
@@ -85,7 +91,7 @@
 
                                 <div class="input-field">
                                     <label for="salary">Salário:</label>
-                                    <input type="text" v-model="experience.salary" />
+                                    <input type="text" v-model="experience.salary" placeholder="R$" />
                                 </div>
 
 
@@ -131,7 +137,7 @@
                                     <i class="uil uil-navigator"></i>
                                     <span class="btnText">Voltar</span>
                                 </div>
-        
+
                                 <button class="nextBtn" @click="goToNextStep()">
                                     <span class="btnText">Próximo</span>
                                     <i class="uil uil-navigator"></i>
@@ -150,16 +156,16 @@ export default {
     name: "Form2View",
     data() {
         return {
-            diversidade: {
-                gender: "",
-                identityGender: "",
-                race: "",
-                sexualOrientation: "",
-                pronoun: "",
-                hasDisability: 'não',
-                disabilityType: ""
-            },
-            showDisabilitySelect: false,
+            educations: [
+                {
+                    level: '',
+                    course: '',
+                    institution: '',
+                    status: '',
+                    startDate: '',
+                    endDate: '',
+                },
+            ],
             technicalCourses: [
                 "Informática",
                 "Eletrônica",
@@ -271,12 +277,6 @@ export default {
                 "Gestão de Políticas Públicas",
                 "Terapia Ocupacional"
             ],
-            education: {
-                level: "",
-                institution: "",
-                startDate: "",
-                endDate: "",
-            },
             hasExperience: false,
             experiences: [],
             experience: {
@@ -307,8 +307,18 @@ export default {
                 console.error('Erro ao carregar os dados:', error);
             }
         },
-        addAnotherGraduation() {
-            this.courses.push({ course: "", institution: "", startDate: "", endDate: "" });
+        addNewEducation() {
+            this.educations.push({
+                level: '',
+                course: '',
+                institution: '',
+                status: '',
+                startDate: '',
+                endDate: '',
+            });
+        },
+        removeEducation(index) {
+            this.educations.splice(index, 1)    ;
         },
         goToPreviousStep() {
             this.$router.push("/cadastro")
@@ -445,7 +455,7 @@ form .fields .input-field {
 }
 
 .form-group {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .input-field input:is(:focus, :valid) {
@@ -478,7 +488,7 @@ form .fields .input-field {
     cursor: pointer;
 }
 
-.container form .submit-button{
+.container form .submit-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -524,5 +534,33 @@ form .buttons {
 form .buttons button,
 .backBtn {
     margin-right: 14px;
+}
+
+.education-entry {
+    margin-bottom: 20px;
+}
+.container form .semi-button-remove,
+.container form .semi-button-add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
+    width: 10%;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 35px;
+    margin: 25px 0;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+
+.container form .semi-button-remove {
+    background-color: rgb(214, 15, 15);
+}
+
+.container form .semi-button-add {
+    background-color: rgb(9, 189, 9);
 }
 </style>

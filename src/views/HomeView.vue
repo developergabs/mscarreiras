@@ -6,7 +6,7 @@
         <h4 class="text-h4">MS Carreiras</h4>
         <h1 class="text-h1">Cadastre-se em nosso banco de dados</h1>
         <p>E saia na frente com as oportunidades MS Consulting por todo o Brasil.</p>
-        <router-link to="/login">
+        <router-link to="/login/candidate">
           <div class="home-btn">Cadastre-se</div>
         </router-link>
       </div>

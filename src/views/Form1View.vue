@@ -61,7 +61,8 @@
               </div>
               <div class="input-field">
                 <label for="cep">CEP:</label>
-                <input type="text" v-model="identity.cep" placeholder="_____-___" @input="limitInputLength($event, 8)" />
+                <input type="text" v-model="identity.cep" placeholder="_____-___"
+                  @input="limitInputLength($event, 8)" />
               </div>
               <div v-if="currentStep.id === 1" class="input-field">
                 <label for="neighbor">Bairro:</label>
@@ -158,6 +159,7 @@
 
 <script>
 import { VueMaskDirective } from 'vue-the-mask'
+import axios from 'axios'
 
 export default {
   name: 'Form1View',
@@ -261,7 +263,20 @@ export default {
           return estado.nome;
         });
       } catch (error) {
-        console.error('Erro ao carregar os dados:', error);
+        console.error(error);
+      }
+    },
+    async submitForm() {
+      try {
+        await axios.post('/identidade', {
+          identity: this.identity,
+          diversidade: this.diversidade,
+        });
+
+        console.log('Dados enviados com sucesso!');
+        this.$router.push('/cadastro2');
+      } catch (error) {
+        console.error('Erro ao enviar os dados:', error);
       }
     },
     limitInputLength(event, maxLength) {
