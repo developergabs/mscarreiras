@@ -6,37 +6,47 @@
             <form action="#">
                 <div class="form first">
                     <div class="details personal">
-                        <span class="title">Cursos Complementares</span>
+                        <div v-for="(course, index) in courses" :key="index">
+                            <span class="title">{{ courseTitles[index] }}</span>
 
-                        <div class="fields">
-                            <div class="input-field">
-                                <label for="course">Curso Complemetar:</label>
-                                <input type="text" v-model="courses.course">
-                            </div>
+                            <div class="fields">
+                                <div class="input-field">
+                                    <label for="course">Curso Complemetar:</label>
+                                    <input type="text" v-model="course.course">
+                                </div>
 
-                            <div class="input-field">
-                                <label for="courseInstituition">Instituição:</label>
-                                <input type="text" v-model="courses.instituition">
-                            </div>
+                                <div class="input-field">
+                                    <label for="courseInstituition">Instituição:</label>
+                                    <input type="text" v-model="course.instituition">
+                                </div>
 
-                            <div class="input-field">
-                                <label for="extraHours">Horas cursadas:</label>
-                                <input type="text" v-model="courses.extraHours" placeholder="Informe as horas cursadas">
-                            </div>
+                                <div class="input-field">
+                                    <label for="extraHours">Horas cursadas:</label>
+                                    <input type="text" v-model="course.extraHours"
+                                        placeholder="Informe as horas cursadas">
+                                </div>
 
-                            <div class="input-field">
-                                <label for="courseStartDate">Data de Inicio:</label>
-                                <input type="date" v-model="courses.startDate" max="9999-12-31">
-                            </div>
+                                <div class="input-field">
+                                    <label for="courseStartDate">Data de Inicio:</label>
+                                    <input type="date" v-model="course.startDate" max="9999-12-31">
+                                </div>
 
-                            <div class="input-field">
-                                <label for="courseEndDate">Data de Término:</label>
-                                <input type="date" v-model="courses.endDate" max="9999-12-31">
+                                <div class="input-field">
+                                    <label for="courseEndDate">Data de Término:</label>
+                                    <input type="date" v-model="course.endDate" max="9999-12-31">
+                                </div>
                             </div>
+                        </div>
+                        <div class="buttons">
+                            <button type="button" @click="removeCourse(index)" class="semi-button-remove"><i
+                                    class="uil uil-multiply"></i></button>
+                            <button type="button" @click="addNewCourse" class="semi-button-add"><i
+                                    class="uil uil-plus"></i></button>
                         </div>
 
                         <div class="details personal">
-                            <span class="title">Idiomas</span>
+                            <div v-for="(language, index) in languages" :key="index">
+                            <span class="title">{{ languageTitles[index] }}</span>
 
                             <div class="fields">
                                 <div class="input-field">
@@ -46,7 +56,7 @@
 
                                 <div class="input-field">
                                     <label for="proficiency">Nível de Proficiência:</label>
-                                    <select v-model="proficiency">
+                                    <select v-model="languages.proficiency">
                                         <option value="">Selecione o seu nível de proficiência</option>
                                         <option value="Básico">Básico</option>
                                         <option value="Intermediário">Intermediário</option>
@@ -70,17 +80,24 @@
                                     <input type="date" v-model="languages.endDate" max="9999-12-31">
                                 </div>
                             </div>
+                        </div>
                             <div class="buttons">
-                                    <div class="backBtn" @click="goToPreviousStep()">
-                                        <i class="uil uil-navigator"></i>
-                                        <span class="btnText">Voltar</span>
-                                    </div>
-
-                                    <button class="nextBtn" @click="saveButton()">
-                                        <span class="btnText">Salvar</span>
-                                        <i class="uil uil-navigator"></i>
-                                    </button>
+                                <button type="button" @click="removeLanguage(index)" class="semi-button-remove"><i
+                                        class="uil uil-multiply"></i></button>
+                                <button type="button" @click="addNewLanguage" class="semi-button-add"><i
+                                        class="uil uil-plus"></i></button>
+                            </div>
+                            <div class="buttons">
+                                <div class="backBtn" @click="goToPreviousStep()">
+                                    <i class="uil uil-navigator"></i>
+                                    <span class="btnText">Voltar</span>
                                 </div>
+
+                                <button class="nextBtn" @click="saveButton()">
+                                    <span class="btnText">Salvar</span>
+                                    <i class="uil uil-navigator"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -94,14 +111,57 @@ export default {
     name: "Form3View",
     data() {
         return {
-            courses:
-                { course: "", institution: "", startDate: "", endDate: "" },
+            courses: [
+                {
+                    course: "",
+                    institution: "",
+                    startDate: "",
+                    endDate: ""
+                },
+            ],
             extraHours: "",
-            languages:
-                { language: "", institution: "", startDate: "", endDate: "" }
+            languages: [
+                { language: "",
+                proficiency: "",
+                institution: "",
+                startDate: "",
+                endDate: "" },],
+        }
+    },
+    computed: {
+        courseTitles() {
+            return this.courses.map((_, index) => index === 0 ? 'Curso Complementar' : 'Adicionar Novo Curso');
+        },
+        languageTitles() {
+            return this.languages.map((_, index) => index === 0 ? 'Idioma' : 'Adicionar Novo Idioma');
         }
     },
     methods: {
+        addNewCourse() {
+            this.courses.push({
+                level: '',
+                course: '',
+                institution: '',
+                status: '',
+                startDate: '',
+                endDate: '',
+            });
+        },
+        removeCourse(index) {
+            this.courses.splice(index, 1);
+        },
+        addNewLanguage() {
+            this.languages.push({
+                language: "",
+                proficiency: "",
+                institution: "",
+                startDate: "",
+                endDate: ""
+            });
+        },
+        removeLanguage(index) {
+            this.languages.splice(index, 1);
+        },
         goToPreviousStep() {
             this.$router.push("/cadastro2")
         },
@@ -304,5 +364,30 @@ form .buttons {
 form .buttons button,
 .backBtn {
     margin-right: 14px;
+}
+
+.container form .semi-button-remove,
+.container form .semi-button-add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
+    width: 10%;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 35px;
+    margin: 25px 0;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+
+.container form .semi-button-remove {
+    background-color: rgb(214, 15, 15);
+}
+
+.container form .semi-button-add {
+    background-color: rgb(9, 189, 9);
 }
 </style>

@@ -7,7 +7,7 @@
                 <div class="form first">
                     <div class="details personal">
                         <div v-for="(education, index) in educations" :key="index">
-                            <span class="title">Formação</span>
+                            <span class="title">{{ educationTitles[index] }}</span>
                             <div class="fields">
                                 <div class="input-field">
                                     <label for="education">Escolaridade:</label>
@@ -68,16 +68,20 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="buttons">
-                            <button type="button" @click="removeEducation(index)" class="semi-button-remove"><i
-                                    class="uil uil-multiply"></i></button>
-                            <button type="button" @click="addNewEducation" class="semi-button-add"><i
-                                    class="uil uil-plus"></i></button>
-                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button type="button" @click="removeEducation(index)"
+                            class="semi-button-remove">
+                            <i class="uil uil-multiply"></i>
+                        </button>
+                        <button type="button" @click="addNewEducation" class="semi-button-add">
+                            <i class="uil uil-plus"></i>
+                        </button>
+                    </div>
 
-                        <div class="details personal">
-                            <span class="title">Experiência</span>
-
+                    <div class="details personal">
+                        <div v-for="(experience, index) in experiences" :key="index">
+                            <span class="title">{{ experienceTitles[index] }}</span>
                             <div class="fields">
                                 <div class="input-field">
                                     <label for="position">Cargo:</label>
@@ -93,7 +97,6 @@
                                     <label for="salary">Salário:</label>
                                     <input type="text" v-model="experience.salary" placeholder="R$" />
                                 </div>
-
 
                                 <div class="input-field">
                                     <label for="workMode">Modelo de trabalho:</label>
@@ -130,26 +133,36 @@
                                     <input type="checkbox" id="hasNoExperience" v-model="hasNoExperience">
                                     <label for="hasNoExperience"> Não possuo experiência</label>
                                 </div>
-
-                            </div>
-                            <div class="buttons">
-                                <div class="backBtn" @click="goToPreviousStep()">
-                                    <i class="uil uil-navigator"></i>
-                                    <span class="btnText">Voltar</span>
-                                </div>
-
-                                <button class="nextBtn" @click="goToNextStep()">
-                                    <span class="btnText">Próximo</span>
-                                    <i class="uil uil-navigator"></i>
-                                </button>
                             </div>
                         </div>
+                        <div class="buttons">
+                            <button type="button" @click="removeExperience(index)"
+                                class="semi-button-remove">
+                                <i class="uil uil-multiply"></i>
+                            </button>
+                            <button type="button" @click="addNewExperience" class="semi-button-add">
+                                <i class="uil uil-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="buttons">
+                        <div class="backBtn" @click="goToPreviousStep()">
+                            <i class="uil uil-navigator"></i>
+                            <span class="btnText">Voltar</span>
+                        </div>
+
+                        <button class="nextBtn" @click="goToNextStep()">
+                            <span class="btnText">Próximo</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
 </template>
+
 
 <script>
 export default {
@@ -278,7 +291,20 @@ export default {
                 "Terapia Ocupacional"
             ],
             hasExperience: false,
-            experiences: [],
+            experiences: [
+                {
+                    position: "",
+                    company: "",
+                    salary: "",
+                    description: "",
+                    workMode: "Remoto",
+                    city: "",
+                    state: "",
+                    startDate: "",
+                    endDate: "",
+                    currentlyWorking: false,
+                }
+            ],
             experience: {
                 position: "",
                 company: "",
@@ -290,7 +316,13 @@ export default {
             },
         }
     },
-    components: {
+    computed: {
+        educationTitles() {
+            return this.educations.map((_, index) => index === 0 ? 'Formação' : 'Adicionar Nova Formação');
+        },
+        experienceTitles() {
+            return this.experiences.map((_, index) => index === 0 ? 'Experiência' : 'Adicionar Nova Experiência');
+        }
     },
     mounted() {
         this.loadData();
@@ -316,9 +348,10 @@ export default {
                 startDate: '',
                 endDate: '',
             });
+            this.educationTitle = 'Adicionar Nova Formação';
         },
         removeEducation(index) {
-            this.educations.splice(index, 1)    ;
+                this.educations.splice(index, 1);
         },
         goToPreviousStep() {
             this.$router.push("/cadastro")
@@ -326,7 +359,7 @@ export default {
         goToNextStep() {
             this.$router.push("/cadastro3")
         },
-        addExperience() {
+        addNewExperience() {
             this.experiences.push({
                 position: "",
                 company: "",
@@ -337,7 +370,10 @@ export default {
                 startDate: "",
                 endDate: "",
                 currentlyWorking: false
-            })
+            });
+        },
+        removeExperience(index) {
+                this.experiences.splice(index, 1);
         }
     }
 }
@@ -539,6 +575,7 @@ form .buttons button,
 .education-entry {
     margin-bottom: 20px;
 }
+
 .container form .semi-button-remove,
 .container form .semi-button-add {
     display: flex;
