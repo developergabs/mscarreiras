@@ -3,7 +3,7 @@
         <div class="container">
             <header>Cadastro (2/3)</header>
 
-            <form action="#">
+            <form action="#" name="formulario">
                 <div class="form first">
                     <div class="details personal">
                         <div v-for="(education, index) in educations" :key="index">
@@ -70,8 +70,7 @@
                         </div>
                     </div>
                     <div class="buttons">
-                        <button type="button" @click="removeEducation(index)"
-                            class="semi-button-remove">
+                        <button type="button" @click="removeEducation(index)" class="semi-button-remove">
                             <i class="uil uil-multiply"></i>
                         </button>
                         <button type="button" @click="addNewEducation" class="semi-button-add">
@@ -94,35 +93,47 @@
                                 </div>
 
                                 <div class="input-field">
-                                    <label for="salary">Salário:</label>
+                                    <label for="salary">Último Salário:</label>
                                     <input type="text" v-model="experience.salary" placeholder="R$" />
                                 </div>
 
-                                <div class="input-field">
-                                    <label for="workMode">Modelo de trabalho:</label>
-                                    <select v-model="experience.workMode">
-                                        <option value="Remoto">Remoto</option>
-                                        <option value="Presencial">Presencial</option>
-                                        <option value="Híbrido">Híbrido</option>
-                                    </select>
+                                <div class="input-field textarea-field">
+                                    <label for="activities">Principais Atividades:</label>
+                                    <textarea v-model="experience.activities"
+                                        placeholder="Descreva suas principais atividades" />
+                                </div>
+
+                                <div class="side-fields">
+                                    <div class="input-field">
+                                        <label for="state">Estado:</label>
+                                        <select v-model="experience.state" @change="updateCities">
+                                            <option value="">Selecione um estado</option>
+                                            <option v-for="state in states" :key="state">{{ state }}</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="input-field">
+                                        <label for="city">Cidade:</label>
+                                        <select v-model="experience.city">
+                                            <option value="">Selecione uma cidade</option>
+                                            <option v-for="city in cities" :key="city"> {{ city }}</option>
+                                        </select>
+                                    </div>
                                 </div>
 
                                 <div class="input-field">
-                                    <label for="city">Cidade:</label>
-                                    <input type="text" v-model="experience.city" />
-                                </div>
-
-                                <div class="input-field">
-                                    <label for="state">Estado:</label>
-                                    <input type="text" v-model="experience.state" />
-                                </div>
+                                        <label for="workMode">Modelo de trabalho:</label>
+                                        <select v-model="experience.workMode">
+                                            <option value="Remoto">Remoto</option>
+                                            <option value="Presencial">Presencial</option>
+                                            <option value="Híbrido">Híbrido</option>
+                                        </select>
+                                    </div>
 
                                 <div class="input-field">
                                     <label for="startDate">Data de entrada:</label>
                                     <input type="date" v-model="experience.startDate" max="9999-12-31" />
                                 </div>
-
-                                <div class="input-field"></div>
 
                                 <div class="input-field">
                                     <label for="endDate">Data de saída:</label>
@@ -136,8 +147,7 @@
                             </div>
                         </div>
                         <div class="buttons">
-                            <button type="button" @click="removeExperience(index)"
-                                class="semi-button-remove">
+                            <button type="button" @click="removeExperience(index)" class="semi-button-remove">
                                 <i class="uil uil-multiply"></i>
                             </button>
                             <button type="button" @click="addNewExperience" class="semi-button-add">
@@ -290,13 +300,69 @@ export default {
                 "Gestão de Políticas Públicas",
                 "Terapia Ocupacional"
             ],
+            states: [
+                "Acre",
+                "Alagoas",
+                "Amapá",
+                "Amazonas",
+                "Bahia",
+                "Ceará",
+                "Distrito Federal",
+                "Espírito Santo",
+                "Goiás",
+                "Maranhão",
+                "Mato Grosso",
+                "Mato Grosso do Sul",
+                "Minas Gerais",
+                "Pará",
+                "Paraíba",
+                "Paraná",
+                "Pernambuco",
+                "Piauí",
+                "Rio de Janeiro",
+                "Rio Grande do Norte",
+                "Rio Grande do Sul",
+                "Rondônia",
+                "Roraima",
+                "Santa Catarina",
+                "São Paulo",
+                "Sergipe",
+                "Tocantins"
+            ],
+            citiesByState: {
+                "Amazonas": ["Manaus", "Parintins", "Itacoatiara", "Manacapuru", "Coari", "Tefé", "Tabatinga", "São Gabriel da Cachoeira", "Humaitá", "Iranduba"],
+                "Bahia": ["Salvador", "Feira de Santana", "Vitória da Conquista", "Camaçari", "Itabuna", "Juazeiro", "Lauro de Freitas", "Ilhéus", "Jequié", "Teixeira de Freitas"],
+                "Ceará": ["Fortaleza", "Caucaia", "Juazeiro do Norte", "Maracanaú", "Sobral", "Crato", "Itapipoca", "Maranguape", "Iguatu", "Quixadá"],
+                "Distrito Federal": ["Brasília", "Ceilândia", "Gama", "Taguatinga", "Paranoá", "Planaltina", "Samambaia", "Santa Maria", "Sobradinho", "Recanto das Emas"],
+                "Espírito Santo": ["Vitória", "Vila Velha", "Serra", "Cariacica", "Cachoeiro de Itapemirim", "Linhares", "São Mateus", "Guarapari", "Colatina", "Aracruz"],
+                "Goiás": ["Goiânia", "Anápolis", "Aparecida de Goiânia", "Rio Verde", "Águas Lindas de Goiás", "Luziânia", "Valparaíso de Goiás", "Trindade", "Formosa", "Novo Gama"],
+                "Maranhão": ["São Luís", "Imperatriz", "São José de Ribamar", "Timon", "Caxias", "Codó", "Paço do Lumiar", "Açailândia", "Bacabal", "Balsas"],
+                "Mato Grosso": ["Cuiabá", "Várzea Grande", "Rondonópolis", "Sinop", "Tangará da Serra", "Cáceres", "Sorriso", "Lucas do Rio Verde", "Primavera do Leste", "Barra do Garças"],
+                "Mato Grosso do Sul": ["Campo Grande", "Dourados", "Três Lagoas", "Corumbá", "Ponta Porã", "Naviraí", "Nova Andradina", "Aquidauana", "Sidrolândia", "Paranaíba"],
+                "Minas Gerais": ["Belo Horizonte", "Uberlândia", "Contagem", "Betim", "Montes Claros", "Ribeirão das Neves", "Uberaba", "Governador Valadares", "Ipatinga", "Sete Lagoas"],
+                "Pará": ["Belém", "Ananindeua", "Santarém", "Marabá", "Castanhal", "Parauapebas", "Itaituba", "Abaetetuba", "Cametá", "São Félix do Xingu"],
+                "Paraíba": ["João Pessoa", "Campina Grande", "Santa Rita", "Patos", "Bayeux", "Sousa", "Cajazeiras", "Cabedelo", "Guarabira", "Santa Luzia"],
+                "Paraná": ["Curitiba", "Londrina", "Maringá", "Ponta Grossa", "Cascavel", "São José dos Pinhais", "Foz do Iguaçu", "Colombo", "Guarapuava", "Paranaguá"],
+                "Pernambuco": ["Recife", "Jaboatão dos Guararapes", "Olinda", "Caruaru", "Petrolina", "Paulista", "Cabo de Santo Agostinho", "Camaragibe", "Garanhuns", "Vitória de Santo Antão"],
+                "Piauí": ["Teresina", "Parnaíba", "Picos", "Campo Maior", "Floriano", "Piripiri", "Barras", "Altos", "José de Freitas", "Oeiras"],
+                "Rio de Janeiro": ["Rio de Janeiro", "São Gonçalo", "Duque de Caxias", "Nova Iguaçu", "Niterói", "Campos dos Goytacazes", "Belford Roxo", "São João de Meriti", "Petrópolis", "Volta Redonda"],
+                "Rio Grande do Norte": ["Natal", "Mossoró", "Parnamirim", "São Gonçalo do Amarante", "Macaíba", "Ceará-Mirim", "Caicó", "Açu", "Currais Novos", "São José de Mipibu"],
+                "Rio Grande do Sul": ["Porto Alegre", "Caxias do Sul", "Pelotas", "Canoas", "Santa Maria", "Gravataí", "Viamão", "Novo Hamburgo", "São Leopoldo", "Rio Grande"],
+                "Rondônia": ["Porto Velho", "Ji-Paraná", "Ariquemes", "Vilhena", "Cacoal", "Rolim de Moura", "Guajará-Mirim", "Jaru", "Ouro Preto do Oeste", "Pimenta Bueno"],
+                "Roraima": ["Boa Vista", "Caracaraí", "Rorainópolis", "Bonfim", "Mucajaí", "São Luiz", "Cantá", "Alto Alegre", "Pacaraima", "Caroebe"],
+                "Santa Catarina": ["Florianópolis", "Joinville", "Blumenau", "São José", "Criciúma", "Chapecó", "Itajaí", "Jaraguá do Sul", "Palhoça", "Lages"],
+                "São Paulo": ["São Paulo", "Guarulhos", "Campinas", "São Bernardo do Campo", "Santo André", "São José dos Campos", "Osasco", "Ribeirão Preto", "Sorocaba", "Mauá"],
+                "Sergipe": ["Aracaju", "Nossa Senhora do Socorro", "Lagarto", "Itabaiana", "São Cristóvão", "Estância", "Tobias Barreto", "Simão Dias", "Nossa Senhora da Glória", "Itabaianinha"],
+                "Tocantins": ["Palmas", "Araguaína", "Gurupi", "Porto Nacional", "Paraíso do Tocantins", "Gurupi", "Colinas do Tocantins", "Guaraí", "Formoso do Araguaia", "Dianópolis"]
+            },
+            cities: [],
             hasExperience: false,
             experiences: [
                 {
                     position: "",
                     company: "",
                     salary: "",
-                    description: "",
+                    activities: "",
                     workMode: "Remoto",
                     city: "",
                     state: "",
@@ -309,7 +375,10 @@ export default {
                 position: "",
                 company: "",
                 salary: "",
-                description: "",
+                activities: "",
+                workMode: "Remoto",
+                city: "",
+                state: "",
                 startDate: "",
                 endDate: "",
                 currentlyWorking: false,
@@ -324,21 +393,7 @@ export default {
             return this.experiences.map((_, index) => index === 0 ? 'Experiência' : 'Adicionar Nova Experiência');
         }
     },
-    mounted() {
-        this.loadData();
-    },
     methods: {
-        async loadData() {
-            try {
-                const response = await fetch('/src/rest.json');
-                const data = await response.json();
-                this.states = data.estados.map(function (estado) {
-                    return estado.nome;
-                });
-            } catch (error) {
-                console.error('Erro ao carregar os dados:', error);
-            }
-        },
         addNewEducation() {
             this.educations.push({
                 level: '',
@@ -351,7 +406,7 @@ export default {
             this.educationTitle = 'Adicionar Nova Formação';
         },
         removeEducation(index) {
-                this.educations.splice(index, 1);
+            this.educations.splice(index, 1);
         },
         goToPreviousStep() {
             this.$router.push("/cadastro")
@@ -373,8 +428,12 @@ export default {
             });
         },
         removeExperience(index) {
-                this.experiences.splice(index, 1);
-        }
+            this.experiences.splice(index, 1);
+        },
+        updateCities() {
+            const selectedState = this.identity.state;
+            this.cities = this.citiesByState[selectedState] || [];
+        },
     }
 }
 </script>
@@ -454,13 +513,30 @@ form .fields .input-field {
     margin: 4px 0;
 }
 
+form .fields .input-field.textarea-field {
+    width: calc(100% / 3 * 2 - 15px);
+}
+
+form .fields .side-fields {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(100% / 3 - 15px);
+    margin-top: 8px;
+}
+
+form .fields .side-fields .input-field {
+    width: 100%;
+}
+
 .input-field label {
     font-size: 12px;
     font-weight: 500;
     color: #2e2e2e;
 }
 
-.input-field input {
+.input-field input,
+.input-field textarea {
     outline: none;
     font-size: 14px;
     font-weight: 400;
@@ -470,6 +546,12 @@ form .fields .input-field {
     padding: 0 15px;
     height: 42px;
     margin: 8px 0;
+}
+
+.input-field textarea {
+    height: 130px;
+    resize: none;
+    padding-top: 10px;
 }
 
 .input-field select {
@@ -483,6 +565,7 @@ form .fields .input-field {
     height: 42px;
     margin: 8px 0;
     background-color: #fff;
+    width: 100%;
 }
 
 .input-field select:focus,
@@ -494,7 +577,8 @@ form .fields .input-field {
     margin-bottom: 20px;
 }
 
-.input-field input:is(:focus, :valid) {
+.input-field input:is(:focus, :valid),
+.input-field textarea:is(:focus, :valid) {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
 }
 

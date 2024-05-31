@@ -3,7 +3,7 @@
     <div class="container">
       <header>Cadastro (1/3)</header>
 
-      <form @submit.prevent="submitForm">
+      <form @submit.prevent="submitForm" name="formulario">
         <div class="form first">
           <div class="details personal">
             <span class="title">Dados Pessoais</span>
@@ -44,6 +44,7 @@
                 <label for="emissionRg">Data de Emissão:</label>
                 <input type="date" v-model="identity.emissionRg" max="9999-12-31" class="input-numbers" />
               </div>
+
               <div class="input-field">
                 <label for="state">Estado:</label>
                 <select v-model="identity.state" @change="updateCities" class="">
@@ -68,7 +69,6 @@
                 <label for="neighbor">Bairro:</label>
                 <input type="text" v-model="identity.neighbor" />
               </div>
-
             </div>
             <div class="details personal">
               <span class="title">Diversidade e Inclusão</span>
@@ -114,12 +114,6 @@
                   </select>
                 </div>
                 <div class="input-field">
-                  <label for="pronoun">Pronome:</label>
-                  <select v-model="diversidade.pronoun">
-                    <option value="Ele dele">Ele dele</option>
-                    <option value="Ela dela">Ela dela</option>
-                    <option value="Prefiro não responder">Prefiro não responder</option>
-                  </select>
                 </div>
                 <div class="input-field">
                   <label for="disability">Pessoa com Deficiência:</label>
@@ -251,21 +245,7 @@ export default {
       showDisabilitySelect: false,
     };
   },
-  mounted() {
-    this.loadData();
-  },
   methods: {
-    async loadData() {
-      try {
-        const response = await fetch('/src/rest.json');
-        const data = await response.json();
-        this.states = data.estados.map(function (estado) {
-          return estado.nome;
-        });
-      } catch (error) {
-        console.error(error);
-      }
-    },
     async submitForm() {
       try {
         await axios.post('/identidade', {

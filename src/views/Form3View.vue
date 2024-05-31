@@ -11,8 +11,18 @@
 
                             <div class="fields">
                                 <div class="input-field">
-                                    <label for="course">Curso Complemetar:</label>
-                                    <input type="text" v-model="course.course">
+                                    <label for="course">Curso Complementar:</label>
+                                    <select v-model="course.course">
+                                        <option value="">Selecione seu curso</option>
+                                        <option v-for="courseOption in availableCourses" :key="courseOption"
+                                            :value="courseOption">{{ courseOption }}</option>
+                                    </select>
+                                </div>
+
+                                <div v-if="course.course === 'Outro'" class="input-field">
+                                    <label for="otherCourse">Nome do curso:</label>
+                                    <input type="text" v-model="course.otherCourse"
+                                        placeholder="Digite o nome do curso">
                                 </div>
 
                                 <div class="input-field">
@@ -46,41 +56,45 @@
 
                         <div class="details personal">
                             <div v-for="(language, index) in languages" :key="index">
-                            <span class="title">{{ languageTitles[index] }}</span>
+                                <span class="title">{{ languageTitles[index] }}</span>
 
-                            <div class="fields">
-                                <div class="input-field">
-                                    <label for="language">Idioma:</label>
-                                    <input type="text" v-model="languages.language">
-                                </div>
+                                <div class="fields">
+                                    <div class="input-field">
+                                        <label for="language">Idioma:</label>
+                                        <select v-model="language.language">
+                                            <option value="">Selecione o idioma</option>
+                                            <option v-for="lang in availableLanguages" :key="lang" :value="lang">{{ lang
+                                                }}</option>
+                                        </select>
+                                    </div>
 
-                                <div class="input-field">
-                                    <label for="proficiency">Nível de Proficiência:</label>
-                                    <select v-model="languages.proficiency">
-                                        <option value="">Selecione o seu nível de proficiência</option>
-                                        <option value="Básico">Básico</option>
-                                        <option value="Intermediário">Intermediário</option>
-                                        <option value="Avançado">Avançado</option>
-                                        <option value="Fluente">Fluente</option>
-                                    </select>
-                                </div>
+                                    <div class="input-field">
+                                        <label for="proficiency">Nível de Proficiência:</label>
+                                        <select v-model="language.proficiency">
+                                            <option value="">Selecione o seu nível de proficiência</option>
+                                            <option value="Básico">Básico</option>
+                                            <option value="Intermediário">Intermediário</option>
+                                            <option value="Avançado">Avançado</option>
+                                            <option value="Fluente">Fluente</option>
+                                        </select>
+                                    </div>
 
-                                <div class="input-field">
-                                    <label for="languageInstituition">Instituição:</label>
-                                    <input type="text" v-model="languages.instituition">
-                                </div>
+                                    <div class="input-field">
+                                        <label for="languageInstituition">Instituição:</label>
+                                        <input type="text" v-model="language.institution">
+                                    </div>
 
-                                <div class="input-field">
-                                    <label for="languageStartDate">Data de Inicio:</label>
-                                    <input type="date" v-model="languages.startDate" max="9999-12-31">
-                                </div>
+                                    <div class="input-field">
+                                        <label for="languageStartDate">Data de Inicio:</label>
+                                        <input type="date" v-model="language.startDate" max="9999-12-31">
+                                    </div>
 
-                                <div class="input-field">
-                                    <label for="languageEndDate">Data de Término:</label>
-                                    <input type="date" v-model="languages.endDate" max="9999-12-31">
+                                    <div class="input-field">
+                                        <label for="languageEndDate">Data de Término:</label>
+                                        <input type="date" v-model="language.endDate" max="9999-12-31">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                             <div class="buttons">
                                 <button type="button" @click="removeLanguage(index)" class="semi-button-remove"><i
                                         class="uil uil-multiply"></i></button>
@@ -115,18 +129,61 @@ export default {
                 {
                     course: "",
                     institution: "",
+                    extraHours: "",
                     startDate: "",
                     endDate: ""
-                },
+                }
             ],
-            extraHours: "",
             languages: [
-                { language: "",
-                proficiency: "",
-                institution: "",
-                startDate: "",
-                endDate: "" },],
-        }
+                {
+                    language: "",
+                    proficiency: "",
+                    institution: "",
+                    startDate: "",
+                    endDate: ""
+                }
+            ],
+            availableLanguages: [
+                'Inglês',
+                'Espanhol',
+                'Francês',
+                'Alemão',
+                'Chinês',
+                'Japonês',
+                'Português',
+                'Russo',
+                'Árabe',
+                'Hindi',
+                'Italiano',
+                'Coreano',
+                'Holandês',
+                'Sueco',
+                'Turco'
+            ],
+            availableCourses: [
+                'Gestão de Projetos',
+                'Marketing Digital',
+                'Design Gráfico',
+                'Programação e Desenvolvimento Web',
+                'Análise de Dados',
+                'Idiomas Estrangeiros',
+                'Escrita Criativa',
+                'Fotografia',
+                'Finanças Pessoais',
+                'Comunicação e Oratória',
+                'Liderança e Gestão de Equipes',
+                'Negociação e Vendas',
+                'Mindfulness e Meditação',
+                'Desenvolvimento Pessoal e Coaching',
+                'Empreendedorismo',
+                'Ética e Sustentabilidade',
+                'Direito para Não Juristas',
+                'Primeiros Socorros',
+                'Segurança da Informação',
+                'Inteligência Artificial e Machine Learning',
+                'Outro'
+            ]
+        };
     },
     computed: {
         courseTitles() {
@@ -139,12 +196,11 @@ export default {
     methods: {
         addNewCourse() {
             this.courses.push({
-                level: '',
                 course: '',
                 institution: '',
-                status: '',
+                extraHours: '',
                 startDate: '',
-                endDate: '',
+                endDate: ''
             });
         },
         removeCourse(index) {
@@ -170,8 +226,8 @@ export default {
         }
     }
 }
-
 </script>
+ript>
 
 <style scoped>
 .body {

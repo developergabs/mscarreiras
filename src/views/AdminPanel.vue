@@ -11,11 +11,11 @@
                         </a></li>
                     <li><a href="">
                             <i class="uil uil-files-landscapes"></i>
-                            <span class="link-name">Content</span>
+                            <span class="link-name">Cadastros</span>
                         </a></li>
                     <li><a href="">
                             <i class="uil uil-chart"></i>
-                            <span class="link-name">Analytics</span>
+                            <span class="link-name">Vagas</span>
                         </a></li>
                     <li><a href="">
                             <i class="uil uil-thumbs-up"></i>
@@ -34,18 +34,18 @@
                 <ul class="logout-mode">
                     <li><a href="">
                             <i class="uil uil-signout"></i>
-                            <span class="link-name">Logout</span>
+                            <span class="link-name">Sair</span>
                         </a></li>
 
                     <li class="mode">
                         <a href="#/admin">
-                            <i class="uil uil-moon"></i>
-                            <span class="link-name">Dark Mode</span>
+                            <i class="uil uil-settings"></i>
+                            <span class="link-name">Configurações</span>
                         </a>
 
-                        <div class="mode-toggle">
+                        <!-- <div class="mode-toggle">
                             <span class="switch" @click="modeToggle"></span>
-                        </div>
+                        </div> -->
                     </li>
                 </ul>
             </div>
@@ -72,25 +72,67 @@
 
                     <div class="boxes">
                         <div class="box box1">
-                            <i class="uil uil-thumbs-up"></i>
-                            <span class="text">Total Likes</span>
-                            <span class="number">50,120</span>
+                            <i class="uil uil-files-landscapes"></i>
+                            <span class="text">Cadastros</span>
+                            <span class="number">501</span>
                         </div>
                         <div class="box box2">
                             <i class="uil uil-comments"></i>
-                            <span class="text">Comments</span>
-                            <span class="number">20,120</span>
+                            <span class="text">Vagas</span>
+                            <span class="number">35</span>
                         </div>
                         <div class="box box3">
                             <i class="uil uil-share"></i>
-                            <span class="text">Total Share</span>
-                            <span class="number">10,120</span>
+                            <span class="text">Aplicações</span>
+                            <span class="number">485</span>
                         </div>
                     </div>
                 </div>
 
+                <div class="activity">
+                    <div class="title">
+                        <i class="uil uil-clock-three"></i>
+                        <span class="text">Atividade Recente</span>
+                    </div>
 
-                
+                    <div class="activity-data">
+                        <div class="data names">
+                            <span class="data-title">Nome</span>
+                            <span class="data-list">John Doe</span>
+                            <span class="data-list">Pedro Silva Azevedo</span>
+                            <span class="data-list">Maria Roberta Costa</span>
+                            <span class="data-list">Carlos Sainz Júnior</span>
+                        </div>
+                        <div class="data email">
+                            <span class="data-title">Email</span>
+                            <span class="data-list">john.doe@mail.com</span>
+                            <span class="data-list">pedro.silva@mail.com</span>
+                            <span class="data-list">maria.costa@mail.com</span>
+                            <span class="data-list">carlos.sainz@mail.com</span>
+                        </div>
+                        <div class="data joined">
+                            <span class="data-title">Cadastro</span>
+                            <span class="data-list">23/05/2024</span>
+                            <span class="data-list">21/05/2024</span>
+                            <span class="data-list">17/05/2024</span>
+                            <span class="data-list">11/05/2024</span>
+                        </div>
+                        <div class="data type">
+                            <span class="data-title">Tipo</span>
+                            <span class="data-list">Novo</span>
+                            <span class="data-list">Novo</span>
+                            <span class="data-list">Novo</span>
+                            <span class="data-list">Novo</span>
+                        </div>
+                        <div class="data joined">
+                            <span class="data-title">Status</span>
+                            <span class="data-list">Disponível</span>
+                            <span class="data-list">Trabalhando</span>
+                            <span class="data-list">Disponível</span>
+                            <span class="data-list">Trabalhando</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
@@ -128,7 +170,6 @@ export default {
 <style scoped>
 .body {
     min-height: 100vh;
-    background-color: #0E4BF1;
     color: #1e1c2a;
 }
 
@@ -422,5 +463,36 @@ nav.close ~ .dashboard .top{
 
 .boxes .box.box3 {
     background-color: #E7D1FC;
+}
+
+.dash-content .activity .activity-data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.activity .activity-data {
+    display: flex;
+}
+
+.activity-data .data{
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px;
+}
+
+.activity-data .data-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+}
+
+.activity-data .data .data-list {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 20px;
+    white-space: nowrap;
+    color: #000;
 }
 </style>
