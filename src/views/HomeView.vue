@@ -11,6 +11,7 @@
         </router-link>
       </div>
       <div class="home-img">
+        <img src="@/assets/building1.jpg" alt="">
       </div>
     </section>
   </main>
@@ -77,6 +78,8 @@ export default {
 }
 
 .home-img img {
-  width: 100%
+  width: 50%;
+  margin-left: 2rem;
+  float: right;
 }
 </style>

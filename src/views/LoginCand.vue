@@ -75,189 +75,85 @@
                     <div class="modal-scrollable-content">
                         <p><strong>Termos de uso da plataforma MS Consulting</strong></p>
                         <br>
-                        <p><strong>Objetivo geral</strong><br>
-                            Este documento descreve os termos e condições aos quais se submetem os USUÁRIOS que se
-                            inscrevem na plataforma da MS Consulting por meio do site, estabelecendo as normas básicas
-                            de utilização da plataforma. Ao efetuar o cadastro junto ao site da MS Consulting, o USUÁRIO
-                            tem ciência integral da Política de Privacidade adotada pela empresa, que pode ser acessada
-                            clicando "aqui". Caso não concorde com seus termos, deverá deixar de utilizar o site e de
-                            realizar cadastro na plataforma. Este documento, bem como a Política de Privacidade, têm
-                            natureza de contrato de adesão e passam por revisões periódicas para compatibilização com
-                            novas legislações, jurisprudências e práticas de mercado, sem que seja necessária
-                            notificação prévia. Por isso, é importante que o USUÁRIO consulte tais documentos para saber
-                            se continua concordando com os termos antes de seguir com a navegação e cadastro.</p>
+                        <p><strong>MS Consulting</strong> (“Controladora” e, quando em conjunto com o “Titular”,
+                            “Partes”, sendo cada qual uma “Parte”).</p>
+                        <p><strong>USUÁRIO</strong> (“Titular” e, quando em conjunto com a “Controladora”, “Partes”,
+                            sendo cada qual uma “Parte”).</p><br>
+                        <p><strong>Considerando que:</strong></p>
+                        <p>Em conformidade com a Lei nº13.709/18 - Lei Geral de Proteção de Dados Pessoais (LGPD), o
+                            presente Termo visa registrar o consentimento LIVRE, INFORMADO E INEQUÍVOCO do(a)
+                            CANDIDATO(A) interessado(a) em participar de Processo Seletivo da <strong>MS
+                                Consulting</strong>, ao fornecer seus dados pessoais por meio do preenchimento de Ficha
+                            Cadastral ou mediante apresentação de currículo, dessa forma, as partes acordam com as
+                            disposições a seguir expostas:</p><br>
+
+                        <p><strong>Cláusula Primeira - Dados Pessoais e Finalidade</strong>
+                            O USUÁRIO, ao enviar seus dados pessoais e/ou vídeo, para participação em processo seletivo
+                            da Controladora, autoriza a utilização dos mesmos, especialmente para o recebimento do
+                            currículo e/ou vídeo-currículo, sua avaliação, seleção e recrutamento em processo de
+                            admissão para compor o quadro de empregados da Controladora.</p><br>
+
+                        <p><strong>Parágrafo Primeiro:</strong> O USUÁRIO declara que o seu currículo e/ou
+                            vídeo-currículo estão de acordo com o padrão aceito pela Controladora, sendo que serão
+                            objeto de tratamento os seguintes dados, especificamente para participação do processo de
+                            seleção e recrutamento para vaga de emprego: Nome completo; Estado Civil; Nível de instrução
+                            ou escolaridade; Números de telefone e WhatsApp; Endereços de e-mail; Endereço domiciliar;
+                            Escolaridade; Experiência Profissional; Testes de conhecimentos específicos de acordo com a
+                            área de atuação; imagem e som e entre outros dados pessoais sensíveis, ou não, que venham a
+                            ser necessários.</p><br>
+
+                        <p><strong>Parágrafo Segundo:</strong> A fim de conceituar "Dados pessoais" significam quaisquer
+                            informações obtidas em razão do processo seletivo em questão: (i) relativa a uma pessoa
+                            física identificada ou identificável; (ii) que podem ser usadas para identificar ou
+                            autenticar um indivíduo, incluindo, mas não limitado a nome, informações de contato,
+                            informações precisas de localização, identificadores, números de identificação emitidos pelo
+                            governo e outros identificadores pessoais; e (iii) todas as informações que possam ser
+                            consideradas "dados pessoais" ou "informações pessoais" sob a lei aplicável.</p><br>
+
+                        <p><strong>Cláusula Segunda - Atualização e Veracidade dos Dados</strong>
+                            O USUÁRIO é o responsável pela exatidão, veracidade e atualização dos dados fornecidos.</p>
                         <br>
-                        <p><strong>Serviços oferecidos</strong><br>
-                            Fica esclarecido ao USUÁRIO, o qual se declara ciente, que o serviço oferecido pela MS
-                            Consulting se relaciona apenas ao cadastro de currículo para divulgação de vagas, não
-                            existindo qualquer responsabilidade pelo ato de contratação. O
-                            USUÁRIO declara ciência que a finalidade da coleta e tratamento de dados pessoais pela MS
-                            Consulting é para prestação destes serviços de recrutamento e seleção de candidatos,
-                            especificamente para funções de vendas e marketing.</p>
-                        <br>
-                        <p><strong>Direitos e obrigações do usuário (Candidato)</strong><br>
-                            O USUÁRIO declara ter lido, entendido e que aceita todas as regras, condições e obrigações
-                            estabelecidas no presente TERMO, bem como na Política de Privacidade.</p>
-                        <br>
-                        <p>Ao se cadastrar, o USUÁRIO reconhece que:</p>
-                        <br>
-                        <ul>
-                            <li><strong>Para efetuar o cadastro em nossa plataforma</strong>, deverá ter capacidade
-                                jurídica para atos civis e deverá, necessariamente, prestar as informações exigidas no
-                                CADASTRO, assumindo integralmente a responsabilidade (inclusive cível e criminal) pela
-                                exatidão e veracidade das informações fornecidas no CADASTRO, que poderá ser verificado,
-                                a qualquer momento, pela MS Consulting.</li>
-                            <li><strong>Sua senha de acesso ao site</strong> é de uso pessoal e intransferível, não
-                                podendo fornecê-la a terceiros em nenhuma hipótese e, deverá tomar todas as providências
-                                cabíveis para garantir sua confidencialidade.</li>
-                            <li>A recuperação de senhas perdidas ou esquecidas dar-se-á conforme as normas de segurança
-                                divulgadas no site.</li>
-                        </ul>
-                        <br>
-                        <p>O USUÁRIO poderá fazer o cadastro de forma gratuita, devendo informar os seguintes dados
-                            pessoais (cujo propósito é o descrito acima, sendo que a finalidade da obtenção dos dados e
-                            a base legal para o tratamento dos dados encontra-se descrita na Política de Privacidade):
-                        </p>
-                        <br>
-                        <ul>
-                            <li><strong>Dados pessoais e dados de identificação</strong>: Nome, sexo, gênero, estado
-                                civil, data de nascimento, endereço, número de telefone, endereço de e-mail, Link do
-                                Linkedin ou quaisquer outros detalhes de contato, data e país de nascimento, fotos,
-                                nacionalidade.</li>
-                            <li><strong>Detalhes sobre competências e experiência</strong>: nome da empresa e cargo
-                                atual; nível de graduação; qualificações e certificações, incluindo cargos anteriores,
-                                cursos educacionais e de treinamento, currículos e marcos profissionais, últimos livros
-                                lidos; esportes; hobbies; profissão da esposa; profissão dos pais; tem carteira de
-                                motorista; está empregado; anexo do currículo; idiomas; histórico profissional. Em
-                                alguns casos: detalhes para contato de avaliação de capacidade e avaliações/feedback de
-                                antigos gestores ou colegas de equipes e qualquer outra informação pessoal que o USUÁRIO
-                                decida fornecer como parte de sua candidatura de emprego.</li>
-                            <li><strong>Detalhes sobre pretensões</strong>: momento profissional; principal motivo para
-                                estar olhando o mercado; remuneração fixa atual; vínculo profissional atual; pretensão
-                                fixa mínima; pretensão mensal mínima; tem carro para trabalho; disponível para se mudar
-                                para outra cidade; frequência disponível para viajar; histórico profissional; cidades
-                                que avaliaria se mudar; tipo de movimentação profissional que avalia.</li>
-                            <li><strong>Respostas a avaliações internas/externas</strong>: Dados e fatos relacionados
-                                aos resultados que o USUÁRIO entregou nas empresas por onde passou, o que poderá ser
-                                feito por telefone, videoconferências, entrevistas presenciais e gravações em vídeo.
-                            </li>
-                        </ul>
-                        <br>
-                        <p>O USUÁRIO aceita e autoriza expressamente que:</p>
-                        <br>
-                        <ul>
-                            <li>Todos seus dados cadastrados no perfil sejam compartilhados com empresas clientes da MS
-                                Consulting, objetivando sua participação e avaliação em vagas sendo conduzidas por esta
-                                empresa.</li>
-                            <li>Sua imagem e voz sejam gravadas pela MS Consulting e visualizadas posteriormente pelos
-                                consultores e/ou, eventualmente, pelas empresas clientes da MS Consulting.</li>
-                        </ul>
-                        <br>
-                        <p>O USUÁRIO declara ciência de que:</p>
-                        <br>
-                        <ul>
-                            <li>Poderá, a qualquer tempo, efetuar a desativação do seu perfil, oportunidade em que os
-                                dados não serão visíveis aos consultores da MS Consulting para eventual recrutamento e
-                                seleção. Para aderir, clique no botão “Encerrar a minha conta” em seu perfil, deixando
-                                seu perfil não visualizável em nosso banco de dados, mas passível de ser reativado no
-                                futuro.</li>
-                            <li>A partir do seu cadastro e aceitação do Termo de Uso, poderão ser enviadas mensagens via
-                                e-mail, whatsapp, dentre outros canais de comunicação, informando sobre vagas e
-                                processos seletivos abertos que estejam de acordo com o perfil cadastrado no site, tendo
-                                ocorrido a candidatura ou não.</li>
-                        </ul>
-                        <br>
-                        <p>Não existe um prazo para o tratamento dos dados e a MS Consulting não exclui os dados
-                            armazenados, independente do período de tempo, salvo por solicitação do USUÁRIO.</p>
-                        <br>
-                        <p>A qualquer tempo, saiba que poderá excluir seu perfil e dados pessoais dos cadastros da MS
-                            Consulting, de forma que todos seus dados serão excluídos da base de dados da empresa,
-                            devendo para tanto enviar um e-mail para rh@msconsultingbrasil.com.br com o título “Exclusão
-                            de dados pessoais”. Com esta solicitação, a MS Consulting fará a exclusão dos dados em até
-                            72 (setenta e duas) horas.</p>
-                        <br>
-                        <p>Ao solicitar a exclusão dos Dados Pessoais, o USUÁRIO não poderá criar uma nova conta
-                            utilizando o mesmo endereço de e-mail.</p>
-                        <br>
-                        <p>Caso o USUÁRIO solicite a exclusão de seus Dados Pessoais, situação em que imediatamente
-                            perderá acesso aos serviços da MS Consulting, pode ocorrer que os dados precisem ser
-                            mantidos por período superior ao pedido de exclusão, nos termos do art. 16 da Lei Geral de
-                            Proteção de Dados Pessoais, especialmente para:</p>
-                        <br>
-                        <ul>
-                            <li>Cumprimento de obrigação legal ou regulatória;</li>
-                            <li>Estudo por órgão de pesquisa, garantida, sempre que possível, a anonimização dos dados
-                                pessoais;</li>
-                            <li>Uso exclusivo do controlador, vedado seu acesso por terceiro, mediante anonimização dos
-                                dados pessoais, desde que possível. Findos o prazo de manutenção e a necessidade legal,
-                                os dados pessoais serão excluídos com uso de métodos de descarte seguro, ou utilizados
-                                de forma anonimizada para fins estatísticos.</li>
-                        </ul>
-                        <br>
-                        <p>A MS Consulting também se reserva no direito de pesquisar e coletar informações sobre sua
-                            pessoa através de banco de dados externos e terceiros, notadamente, pelo LINKEDIN.</p>
-                        <br>
-                        <p><strong>Direitos e obrigações da MS Consulting</strong><br>
-                            A MS Consulting possui obrigação de manter a fidelidade dos dados cadastrados no sistema
-                            pelo USUÁRIO e zelar pela privacidade dos mesmos. Os dados pessoais não serão, em hipótese
-                            alguma, comercializados ou fornecidos a quaisquer terceiros, exceto às empresas
-                            empregadoras, que são clientes da MS Consulting. Obriga-se a MS Consulting a proteger, por
-                            meio de armazenamento em servidores ou quaisquer outros meios magnéticos de alta segurança,
-                            a confidencialidade de todas as informações e cadastros relativos aos USUÁRIOS.</p>
-                        <br>
-                        <p>Poderá a MS Consulting compartilhar os dados e o perfil do candidato com terceiros, desde
-                            que:</p>
-                        <br>
-                        <ul>
-                            <li>Sejam empresas clientes, quando necessário para o processo de recrutamento e seleção
-                                oferecido pela MS Consulting.</li>
-                            <li>Quando solicitado por autoridades, agências regulatórias ou de exercício da lei, para
-                                cumprir qualquer lei aplicável ou ordem judicial ou em relação a qualquer procedimento
-                                legal.</li>
-                        </ul>
-                        <br>
-                        <p>Caso a MS Consulting tome ciência por si mesma, ou por qualquer terceiro, de que qualquer
-                            informação veiculada pelo USUÁRIO através do site está em desacordo com o sistema jurídico
-                            vigente, inclusive por conflito com direitos de terceiros, será enviada comunicação para
-                            manifestação do USUÁRIO sobre tais fatos no prazo máximo de 24 (vinte e quatro) horas.</p>
-                        <br>
-                        <p>Se após a devida manifestação ficar constatada a ilicitude ou irregularidade do conteúdo
-                            publicado pelo USUÁRIO, a MS Consulting poderá excluir a informação, ou até mesmo desativar
-                            seu cadastro e currículo do site unilateralmente, independentemente de autorização, podendo
-                            fornecer todas as informações às autoridades legais, nos termos da lei.</p>
-                        <br>
-                        <p>Ainda, no silêncio do USUÁRIO no prazo designado acima, a MS Consulting poderá suspender o
-                            conteúdo publicado unilateralmente, independentemente de autorização, até a devida
-                            regularização ou manifestação no sentido de demonstrar a adequação do conteúdo ao sistema
-                            jurídico vigente.</p>
-                        <br>
-                        <p>Caso a MS Consulting constate uma incontroversa ilicitude de conteúdo que possa causar danos
-                            de qualquer espécie a terceiros ou envolva legislação de natureza penal, ela poderá
-                            suspender o cadastro do USUÁRIO, unilateralmente, previamente a comunicação para
-                            manifestação a respeito, nos termos do acima.</p>
-                        <br>
-                        <p>A suspensão ou exclusão de conteúdo também será unilateral e independente de qualquer
-                            comunicação ao USUÁRIO quando determinado por órgão do poder público competente.</p>
-                        <br>
-                        <p>A suspensão de conteúdo ajustada acima não dará direito a nenhuma espécie de indenização, nem
-                            a reparação de danos ou prejuízos pela MS Consulting ao USUÁRIO.</p>
-                        <br>
-                        <p>Por fim, a MS Consulting se reserva o direito de, caso constatado descumprimento pelo USUÁRIO
-                            de qualquer obrigação decorrente dos presentes Termos de Uso ou da Política de Privacidade,
-                            desativar o acesso ao site, ou mesmo excluir cadastro e currículo, sem prejuízo da
-                            possibilidade de remessa de seus dados cadastrais e de acesso às autoridades legais
-                            competentes, sem que isso represente lesão aos direitos de privacidade.</p>
-                        <br>
-                        <p><strong>Vigência e modificação</strong><br>
-                            Este Termo de Uso vigorará por tempo indeterminado e, poderá, a qualquer tempo, ter seu
-                            conteúdo, integral ou parcialmente, modificado para adequações e inserções, tudo com vistas
-                            ao aprimoramento dos serviços disponibilizados, sendo que, em tal caso, o USUÁRIO será
-                            devidamente notificado via e-mail.</p>
-                        <br>
-                        <p><strong>Comunicação</strong><br>
-                            Qualquer dúvida, sugestão, reclamação, etc. sobre estes termos de uso poderá ser esclarecida
-                            por meio de contato com o Encarregado de Dados da MS Consulting, pelo e-mail: <a
-                                href="mailto:rh@msconsultingbrasil.com.br">rh@msconsultingbrasil.com.br</a>.</p>
+
+                        <p><strong>Cláusula Terceira - Compartilhamento</strong>
+                            A Controladora pode compartilhar os dados pessoais do USUÁRIO com empresas que auxiliam na
+                            realização do recrutamento de candidatos e com empresas do mesmo grupo econômico da
+                            Controladora.</p><br>
+
+                        <p><strong>Cláusula Quarta - Tempo de Guarda dos Dados</strong>
+                            Finalizado o processo seletivo, caso o USUÁRIO não tenha sido selecionado, a Controladora
+                            armazenará os seus dados, em banco de dados que garanta a segurança das informações, pelo
+                            período de 2 (dois) anos, quando então serão eliminados, ficando ressalvadas as hipóteses
+                            que autorizam a conservação de dados, conforme prevê o artigo 16 da Lei n° 13.709/2018,
+                            inclusive para a defesa dos direitos da Controladora em processo administrativo, judicial e
+                            arbitral.</p><br>
+
+                        <p><strong>Cláusula Quinta - Acesso aos Dados e Exercício do Direito a Revogação</strong>
+                            O USUÁRIO declara que foram sanadas as suas dúvidas sobre a utilização dos seus dados
+                            pessoais e declara ter ciência que poderá obter informações sobre o tratamento dos seus
+                            dados, exercendo seus direitos, inclusive de revogação do consentimento, por meio do Canal
+                            de Comunicação a seguir relacionado: <strong>rh@g360-brasil.com</strong></p><br>
+
+                        <p><strong>Cláusula Sexta - Segurança dos Dados</strong>
+                            A Controladora se responsabiliza pela manutenção de medidas de segurança, técnicas e
+                            administrativas aptas a proteger os dados pessoais de tratamento inadequado ou ilícito. Em
+                            caso de incidente de segurança que possa acarretar risco ou dano relevante ao USUÁRIO, a
+                            Controladora comunicará sua ocorrência ao USUÁRIO e à Autoridade Nacional de Proteção de
+                            Dados (ANPD), em cumprimento ao artigo 48 da Lei n° 13.709/2018.</p><br>
+
+                        <p><strong>Cláusula Sétima - Conciliação</strong>
+                            Os vazamentos individuais ou acessos não autorizados poderão ser objeto de conciliação
+                            direta
+                            entre Controladora e USUÁRIO e, comprovado o dano e não havendo acordo, a Controladora
+                            ficará sujeita às penalidades previstas no artigo 52 da Lei n° 13.709/2018, devidamente
+                            apuradas pela ANPD.</p><br>
+
+                        <p><strong>Cláusula Oitava - Disposições Finais</strong>
+                            O USUÁRIO declara que tem ciência que os seus dados pessoais e dados pessoais sensíveis
+                            serão
+                            compartilhados apenas para as finalidades indicadas neste termo, e em observância à
+                            legislação vigente no Brasil, resguardado o exercício do direito de defesa pela
+                            Controladora, e as hipóteses de conservação de dados autorizada pela Lei Geral de Proteção
+                            de Dados (Lei n° 13.709/2018).</p><br>
 
                         <p><input type="checkbox" id="termos" name="termos">
                             <label for="termos"> Aceito os termos e condições de uso MS Consulting</label>
@@ -740,26 +636,6 @@ form.sign-in-form {
     }
 }
 
-/* .btn-modal {
-    padding: 25px 60px;
-    display: inline;
-    background-color: tomato;
-    border-radius: 20px;
-    color: #fff;
-    font-size: 20px;
-    cursor: pointer;
-    transition: background-color 0.5s;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-}
-
-.btn-modal:hover {
-    background-color: #ff4c2c;
-} */
-
 .janela-modal {
     width: 100vw;
     height: 100vh;
@@ -791,7 +667,7 @@ form.sign-in-form {
     height: 30px;
     border-radius: 50%;
     border: 0;
-    background-color: red;
+    background-color: #ff5f5f;
     font-size: 20px;
     cursor: pointer;
 }
@@ -835,7 +711,7 @@ form.sign-in-form {
 }
 
 .move-forward {
-    background-color: #4CAF50;
+    background-color: #034078;
     border: none;
     color: white;
     padding: 10px 20px;
@@ -846,5 +722,9 @@ form.sign-in-form {
     cursor: pointer;
     border-radius: 8px;
     float: right;
+}
+
+.move-forward:hover {
+    background-color: #4CAF50;
 }
 </style>
