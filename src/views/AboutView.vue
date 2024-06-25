@@ -104,7 +104,7 @@
                 <div class="footer__col">
                     <h4>NOS CONTATE</h4>
                     <ul class="footer__links">
-                        <li><a href="#">rh@msconsulting-brasil.com</a></li>
+                        <li><a href="https://msconsulting-brasil.com/contato/">rh@g360-brasil.com</a></li>
                     </ul>
                     <div class="footer__socials">
                         <a href="https://www.facebook.com/msconsulting.brasil/?locale=pt_BR"><img
@@ -162,7 +162,7 @@ export default {
     transform: translate(1rem, -50%);
     height: 2px;
     width: 4rem;
-    background-color: #e82574;
+    background-color: #034078;
 }
 
 .section__header {
@@ -269,7 +269,7 @@ a {
 .section__container {
     max-width: var(--max-width);
     margin: auto;
-    padding: 5rem 1rem;
+    padding: 5rem 1rem 2rem;
 }
 
 .about__container {
@@ -334,7 +334,7 @@ a {
 
 .explore__bg {
     margin-top: 4rem;
-    padding-block: 3rem;
+    padding-block: 2rem;
     display: grid;
     grid-template-columns: minmax(1rem, 1fr) minmax(0, var(--max-width)) minmax(1rem, 1fr);
     background-image: url("@/assets/equipeMS2.jpg");
@@ -347,7 +347,8 @@ a {
     grid-column: 2/3;
     max-width: 400px;
     padding: 2rem;
-    background-color: transparent;
+    background-color: #fff;
+    color: #000;
     border-radius: 5px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }

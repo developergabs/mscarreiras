@@ -8,7 +8,7 @@
         <li class="nav-item"><a href="https://msconsulting.vagas.solides.com.br">Vagas</a></li>
         <li class="nav-item"><a href="https://msconsulting-brasil.com/contato/">Contato</a></li>
         <li class="nav-item nav-item--login">
-          <router-link to="/login/candidate">Login Candidato</router-link>
+          <router-link to="/login/candidate">Cadastre-se</router-link>
         </li>
         <i class="bx bx-search"></i>
       </ul>
